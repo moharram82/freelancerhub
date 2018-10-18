@@ -1,0 +1,41 @@
+{
+  "name": "moharram82/freelancerhub",
+  "type": "project",
+  "description": "FreelancerHub website.",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ali Moharram",
+      "email": "ali_rasikh@windowslive.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php" : "^7.0",
+    "vlucas/phpdotenv": "~2.0",
+    "hassankhan/config": "~1.1.0",
+    "symfony/http-foundation": "~3.4.0",
+    "symfony/security": "~3.4.0",
+    "illuminate/database": "~5.5.0",
+    "illuminate/view": "~5.5.0",
+    "illuminate/encryption": "~5.5.0",
+    "illuminate/hashing": "~5.5.0",
+    "nesbot/carbon": "~1.0",
+    "moharram82/monolog": "~1.0"
+  },
+  "require-dev": {
+    "filp/whoops": "~2.1"
+  },
+  "autoload": {
+    "files": [
+      "helpers/support.php",
+      "helpers/utilities.php"
+    ],
+    "psr-4": {
+      "moharram82\\": "src",
+      "App\\": "app"
+    }
+  }
+}
