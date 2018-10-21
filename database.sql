@@ -18,22 +18,6 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for autologins
--- ----------------------------
-DROP TABLE IF EXISTS `autologins`;
-CREATE TABLE `autologins` (
-  `id` varchar(128) NOT NULL,
-  `remember_token` varchar(128) NOT NULL DEFAULT '',
-  `user_id` int(11) unsigned NOT NULL,
-  `user_agent` varchar(255) DEFAULT NULL,
-  `last_access_ip` varchar(30) DEFAULT NULL,
-  `lifetime` int(11) unsigned DEFAULT NULL,
-  `last_access` int(11) unsigned DEFAULT NULL,
-  `created_at` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
 -- Table structure for sessions
 -- ----------------------------
 DROP TABLE IF EXISTS `sessions`;
