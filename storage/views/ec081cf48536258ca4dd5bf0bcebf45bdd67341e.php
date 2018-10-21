@@ -1,11 +1,11 @@
-<?php $__env->startSection('title'); ?> Home - FreelancerHub <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?> الرئيسية - فريلانس هب <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('contents'); ?>
-    <h1>FreelancerHub</h1>
+    <h1>فريلانس هب</h1>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('scripts'); ?>
