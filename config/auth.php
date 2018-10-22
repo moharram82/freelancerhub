@@ -11,7 +11,7 @@ return [
 
     'auth' => [
         'account' => [
-            'activation' => true, // does new account need activation
+            'activation' => false, // does new account need activation
             'lock_after' => 5, // number of unsuccessful attempts before account is locked
             'lock_for' => 30 * 60, // number of seconds before account is unlocked (30 minutes)
             'password_expires' => false, // does the user need to change the password
@@ -38,10 +38,10 @@ return [
         ],
         'send_activation' => 'send-activation.php',
         'reset_password' => 'reset-password.php',
-        'login_path' => 'login.php',
-        'logout_path' => 'logout.php',
-        'register_path' => 'register.php',
-        'profile_path' => 'profile.php',
+        'login_path' => '/login.php',
+        'logout_path' => '/logout.php',
+        'register_path' => '/register.php',
+        'profile_path' => '/profile.php',
 
         /*
          * -------------------------------------------------------------------

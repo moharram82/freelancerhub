@@ -13,8 +13,8 @@
         <link rel="shortcut icon" href="{{ BASEURL }}/favicon.png" type="image/png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="{{ BASEURL }}/css/normalize.css">
-        <link rel="stylesheet" href="{{ BASEURL }}/css/main_ar.css">
+        <link rel="stylesheet" href="{{ BASEURL }}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ BASEURL }}/css/styles_ar.css">
 
         @yield('styles')
 
@@ -23,9 +23,10 @@
 
         @yield('contents')
 
-		<script src="{{ BASEURL }}/js/vendor/modernizr.js"></script>
-		<script src="{{ BASEURL }}/js/vendor/jquery.js"></script>
-		<script src="{{ BASEURL }}/js/plugins.js"></script>
+        <script src="{{ BASEURL }}/js/vendor/jquery.js"></script>
+        <script src="{{ BASEURL }}/js/vendor/popper.min.js"></script>
+        <script src="{{ BASEURL }}/js/vendor/bootstrap.min.js"></script>
+        <script src="{{ BASEURL }}/js/plugins.js"></script>
         <script src="{{ BASEURL }}/js/main.js"></script>
         
         @yield('scripts')

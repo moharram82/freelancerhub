@@ -27,7 +27,7 @@ $whoops->register();
  *---------------------------------------------------------------
  *
  */
-$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv = new Dotenv\Dotenv(BASEPATH);
 $dotenv->load();
 
 /*
@@ -90,7 +90,7 @@ $request = Request::createFromGlobals();
  *  MySQL Database Connection using mysqli driver...
  * -------------------------------------------------------------------
  */
-$mysqli = mysqliConnect(config('db.host'), config('db.username'), config('db.password'), config('db.name'), config('db.charset'));
+//$mysqli = mysqliConnect(config('db.host'), config('db.username'), config('db.password'), config('db.name'), config('db.charset'));
 
 /*
  * -------------------------------------------------------------------

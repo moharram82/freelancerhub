@@ -66,6 +66,18 @@ if (! function_exists('config')) {
     }
 }
 
+if (! function_exists('auth')) {
+    /**
+     * @return \moharram82\Auth\Auth
+     */
+    function auth()
+    {
+        global $auth;
+
+        return $auth;
+    }
+}
+
 if (! function_exists('http_response_code'))
 {
     function http_response_code($newcode = NULL)
