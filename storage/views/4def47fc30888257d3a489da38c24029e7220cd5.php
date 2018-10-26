@@ -1,11 +1,20 @@
-<?php $__env->startSection('title'); ?> الرئيسية - فريلانس هب <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?> Freelancer Name <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('contents'); ?>
-    <h1>فريلانس هب</h1>
+
+    <div class="box">
+
+        <h1>Freelancer Public Profile</h1>
+
+        <?php echo e(var_dump($freelancer)); ?>
+
+
+    </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('scripts'); ?>

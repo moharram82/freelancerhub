@@ -8,4 +8,4 @@ if(!$auth->allowOnly('ROLE_FREELANCER')) {
     exit('You do not have permissions to visit this page.');
 }
 
-echo 'freelancer';
+echo $view->make('freelancer.home')->render();

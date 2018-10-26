@@ -37,7 +37,7 @@
         <?php echo csrf_field(); ?>
 
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
     </form>
 <?php $__env->stopSection(); ?>
 

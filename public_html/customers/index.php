@@ -8,4 +8,4 @@ if(!$auth->allowOnly('ROLE_CUSTOMER')) {
     exit('You do not have permissions to visit this page.');
 }
 
-echo 'customer';
+echo $view->make('customer.home')->render();

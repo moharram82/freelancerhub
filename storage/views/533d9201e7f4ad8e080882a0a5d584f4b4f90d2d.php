@@ -49,7 +49,7 @@
         <?php echo csrf_field(); ?>
 
 
-        <button type="submit" name="register" value="register" class="btn btn-primary">Create Account</button>
+        <button type="submit" name="register" value="register" class="btn btn-success btn-lg btn-block">Create Account</button>
     </form>
 <?php $__env->stopSection(); ?>
 

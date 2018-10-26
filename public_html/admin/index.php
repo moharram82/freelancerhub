@@ -8,4 +8,4 @@ if(!$auth->allowOnly('ROLE_ADMIN')) {
     exit('You do not have permissions to visit this page.');
 }
 
-echo 'admin';
+echo $view->make('admin.home')->render();

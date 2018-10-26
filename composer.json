@@ -26,7 +26,8 @@
     "moharram82/monolog": "~1.0"
   },
   "require-dev": {
-    "filp/whoops": "~2.1"
+    "filp/whoops": "~2.1",
+    "fzaninotto/faker": "~1.8.0"
   },
   "autoload": {
     "files": [

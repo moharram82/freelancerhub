@@ -1,8 +1,11 @@
 
+/*==================================
+** General styles
+*==================================*/
 body {
-    color: #666666;
-    font-family: 'FertigoProRegular', sans-serif;
-    font-size: 18px;
+    color: #5c6b78;
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: 16px;
     line-height: 28px;
     font-weight: 400;
     background-color: #f7f9fc;
@@ -35,20 +38,24 @@ a:hover {
 }
 .box {
     background-color: #ffffff;
-    width: 960px;
     margin: auto;
     padding: 50px;
     border: 1px solid #e9edf0;
     border-radius: 5px;
 }
+
+/*==================================
+** Header styles
+*==================================*/
 .main-nav {
+    font-family: 'FertigoProRegular', sans-serif;
     margin-left: 40px;
 }
 .main-nav li.nav-item {
     margin-right: 20px;
 }
 .main-nav li.nav-item a.nav-link {
-    color: #666666;
+    color: #5c6b78;
 }
 .main-nav li.nav-item a.nav-link:hover {
     color: #000000;
@@ -63,9 +70,165 @@ a:hover {
 .auth {
     font-size: 13px;
 }
+.auth li a.btn {
+    font-size: 13px;
+    margin-top: 8px;
+}
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 25px;
+}
 .user-menu {
     font-size: 14px;
 }
+
+/*==================================
+** Home page styles
+*==================================*/
+.jumbotron {
+    color: #ffffff;
+    text-align: center;
+    background-image: url("../img/bg.png");
+    background-size: cover;
+}
+.jumbotron .lead {
+    font-size: 28px;
+}
+.jumbotron .lead span {
+    color: #a6b8d2;
+    font-style: italic;
+}
+.jumbotron .sub-lead {
+    color: #a6b8d2;
+}
+
+div.explore-section {
+    text-align: center;
+    margin-top: 100px;
+}
+.show-card {
+    font-family: 'Open Sans';
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 40px;
+    padding: 30px;
+    border: 1px solid #e9edf0;
+    border-radius: 5px;
+}
+.show-card i {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.show-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.why-section {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/*==================================
+** Customer Profile styles
+*==================================*/
+div.sidebar {
+    /*background-color: #dadee1;*/
+}
+div.sidebar-section {
+    margin-bottom: 70px;
+}
+div.sidebar-section h4 {
+    color: #9bafb9;
+    font-size: 14px;
+    font-weight: 400;
+    font-variant: small-caps;
+    margin-bottom: 10px;
+}
+div.sidebar-section ul.section-nav {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+div.sidebar-section ul.section-nav li {
+    /*margin-bottom: 20px;*/
+}
+div.sidebar-section ul.section-nav li a i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+div.sidebar-section ul.section-nav li a {
+    color: #5c6b78;
+    padding: 10px 0;
+    display: block;
+    transition: all 300ms ease-in-out;
+}
+div.sidebar-section ul.section-nav li a:hover {
+    font-weight: 700;
+    text-decoration: none;
+    /* background-color: #e9ecef; */
+    /* padding: 10px 20px; */
+    border-radius: 3px;
+}
+p.project-timing {
+    font-size: 12px;
+}
+span.stage-title {
+    color: #5c6b78;
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+}
+div.card-header h5 {
+    float: left;
+}
+div.card-header h5 button {
+    text-align: left;
+}
+span.stage-timing {
+    color: #5c6b78;
+    font-size: 12px;
+    /*float: right;*/
+}
+div.card-header {
+    background-color: #e9ecef;
+}
+div.card-header h5 button:hover {
+    text-decoration: none;
+}
+div.card-header h5 button:hover span.stage-title {
+    color: #1a7cc8;
+}
+span.stage-status {
+    font-weight: 700;
+    font-variant: small-caps;
+    display: block;
+    margin-top: 27px;
+    margin-right: 20px;
+    width: 10px;
+    height: 10px;
+    float: right;
+    border-radius: 25px;
+}
+span.stage-status.stage-status-active {
+    background-color: limegreen;
+}
+span.stage-status.stage-status-pending {
+    background-color: orange;
+}
+span.stage-status.stage-status-delayed {
+    background-color: red;
+}
+span.stage-status.stage-status-completed {
+    background-color: darkgrey;
+}
+
+
+/*==================================
+** Footer styles
+*==================================*/
 .footer {
     margin-top: 60px;
 }
@@ -73,11 +236,11 @@ a:hover {
     font-size: 14px;
     font-weight: normal;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .footer .list-unstyled li {
     font-size: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .footer  a {
     color: #a6b8d2;
@@ -85,6 +248,9 @@ a:hover {
 .footer  a:hover {
     color: #ffffff;
     text-decoration: none;
+}
+.footer-logo {
+    width: 150px;
 }
 .footer .copyright {
     color: #a6b8d2;
