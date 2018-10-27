@@ -69,25 +69,6 @@ function phoneNumber($faker) {
     return $phoneNumber;
 }
 
-function newUser($hasher, $faker) {
-    $user = new User;
-
-    $user->username = $faker->email;
-    $user->password = $hasher->make('1234');
-    $user->roles = $faker->randomElement(['ROLE_FREELANCER', 'ROLE_CUSTOMER']);
-    $user->is_activated = config('auth.account.activation') ? 0 : 1;
-
-    if($user->save()) {
-        if($user->roles == 'ROLE_FREELANCER') {
-            freelancerSeed($user->user_id, $faker);
-        } else {
-            customersSeed($user->user_id, $faker);
-        }
-    }
-
-    return $user;
-}
-
 function customersSeed($user_id, $faker) {
     global $cities;
     global $customerTypes;
@@ -130,6 +111,25 @@ function freelancerSeed($user_id, $faker) {
     $freelancer->response_time = $faker->numberBetween(1, 72);
 
     $freelancer->save();
+}
+
+function newUser($hasher, $faker) {
+    $user = new User;
+
+    $user->username = $faker->email;
+    $user->password = $hasher->make('1234');
+    $user->roles = $faker->randomElement(['ROLE_FREELANCER', 'ROLE_CUSTOMER']);
+    $user->is_activated = config('auth.account.activation') ? 0 : 1;
+
+    if($user->save()) {
+        if($user->roles == 'ROLE_FREELANCER') {
+            freelancerSeed($user->user_id, $faker);
+        } else {
+            customersSeed($user->user_id, $faker);
+        }
+    }
+
+    return $user;
 }
 
 for($i=0; $i<100; $i++) {

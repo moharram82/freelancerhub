@@ -132,9 +132,6 @@ div.explore-section {
 /*==================================
 ** Customer Profile styles
 *==================================*/
-div.sidebar {
-    /*background-color: #dadee1;*/
-}
 div.sidebar-section {
     margin-bottom: 70px;
 }
@@ -151,9 +148,6 @@ div.sidebar-section ul.section-nav {
     margin: 0;
     padding: 0;
     list-style-type: none;
-}
-div.sidebar-section ul.section-nav li {
-    /*margin-bottom: 20px;*/
 }
 div.sidebar-section ul.section-nav li a i {
     font-size: 22px;
@@ -223,6 +217,319 @@ span.stage-status.stage-status-delayed {
 }
 span.stage-status.stage-status-completed {
     background-color: darkgrey;
+}
+
+/*==================================
+** Freelancer Public Profile styles
+*==================================*/
+div.freelancer-profile-header {
+    margin-bottom: 40px;
+}
+div.freelancer-profile-header .picture {
+    background-color: grey;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+div.freelancer-profile-header h1 {
+    font-size: 30px;
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+div.freelancer-profile-header p.subtitle {
+    color: #959ea9;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+div.freelancer-profile-header p.location {
+    color: #5c6b78;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+div.secondary-info table {
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+div.secondary-info div.rating i {
+    color: rgb(240, 156, 1);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+div.secondary-info ul.social-media {
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+div.secondary-info ul.social-media li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+div.secondary-info ul.social-media li a {
+    color: #5c6b78;
+    transition: all 300ms ease-in-out;
+}
+div.secondary-info ul.social-media li a.fb:hover {
+    color: #33508c;
+}
+div.secondary-info ul.social-media li a.tw:hover {
+    color: #2aa3ef;
+}
+div.secondary-info ul.social-media li a.gh:hover {
+    color: #000000;
+}
+div.secondary-info ul.social-media li a.dr:hover {
+    color: #e84f89;
+}
+div.secondary-info ul.social-media li a.li:hover {
+    color: #0d6699;
+}
+div.freelancer-profile-body div.box {
+    margin-bottom: 30px;
+    padding: 40px;
+}
+div.freelancer-profile-body h3 {
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+div.freelancer-profile-body p {
+    font-size: 14px;
+}
+div.freelancer-profile-body hr {
+    margin-bottom: 25px;
+}
+div.freelancer-profile-body div.left,
+div.freelancer-profile-body div.right {
+    margin-top: 10px;
+}
+div.package {
+    margin-bottom: 30px;
+}
+div.package h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+div.package table {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+div.package td.bold {
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+ul.skills {
+    margin:  30px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul.skills li {
+    display: inline-block;
+    margin: 0 10px 20px 0;
+    padding: 0;
+}
+ul.skills li a {
+    color: #5c6b78;
+    padding: 5px 20px;
+    border: 1px solid #5c6b78;
+    border-radius: 25px;
+    transition: all 300ms ease-in-out;
+}
+ul.skills li a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #5c6b78;
+}
+div.review {
+    margin: 30px 0 0 0;
+}
+div.review-header {
+    margin-bottom: 20px;
+}
+div.review-header img {
+    background-color: #5c6b78;
+    display: block;
+    margin-right: 20px;
+    width: 64px;
+    height: 64px;
+    float: left;
+    border-radius: 50px;
+}
+div.review-header h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+div.review-header p {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+div.review-header div.rating {
+    text-align: left;
+    margin-top: -45px;
+    float: right;
+}
+div.similar-profile {
+    margin-bottom: 30px;
+}
+div.similar-profile a img {
+    background-color: #5c6b78;
+    display: block;
+    margin-right: 20px;
+    width: 64px;
+    height: 64px;
+    float: left;
+    border-radius: 50px;
+}
+div.similar-profile a h4 {
+    color: #5c6b78;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+div.similar-profile a:hover h4 {
+    color: #1ab2ff;
+}
+div.similar-profile a p {
+    color: #5c6b78;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+div.similar-profile a:hover {
+    text-decoration: none;
+}
+
+/*==================================
+** Package Details Page styles
+*==================================*/
+div.package-desc h1 {
+    float: left;
+}
+div.specs {
+    float: right;
+}
+div.specs p {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+div.specs span {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+div.freelancer-info a h3,
+div.freelancer-info a p {
+    color: #5c6b78;
+}
+div.freelancer-info a:hover h3,
+div.freelancer-info a:hover p {
+    color: #1a7cc8;
+}
+div.freelancer-info a:hover {
+    text-decoration: none;
+}
+div.freelancer-info h3 {
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+div.freelancer-info p {
+    font-size: 14px;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+div.freelancer-info img {
+    background-color: #5c6b78;
+    display: block;
+    margin: 0 10px 0 0;
+    width: 64px;
+    height: 64px;
+    float: left;
+    border-radius: 50px;
+}
+
+/*==================================
+** Project Details Page styles
+*==================================*/
+div.project-details h1 {
+    margin-bottom: 10px
+}
+div.project-details p.category {
+    color: #b5bcc2;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+div.project-details p.budget {
+    color: #9ea6ad;
+    font-size: 12px;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+div.project-details p.budget span {
+    font-weight: 700;
+}
+
+/*==================================
+** Hub Page styles
+*==================================*/
+div.options {}
+div.box.freelancer-card {
+    padding: 20px;
+}
+div.freelancer-card {
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+div.freelancer-card img {
+    margin: 0 0 20px 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+div.freelancer-card h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+div.freelancer-card h3 a {
+    color: #5c6b78;
+}
+div.freelancer-card h3 a:hover {
+    color: #1a7cc8;
+    text-decoration: none;
+}
+div.freelancer-card p.category {
+    color: #9ea6ad;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+div.freelancer-card div.rating {
+    color: rgb(240, 156, 1);
+}
+div.freelancer-card p.location {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 
