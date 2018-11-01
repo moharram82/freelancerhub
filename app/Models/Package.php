@@ -8,7 +8,12 @@ class Package extends Model
 {
     protected $table = 'packages';
 
-    public static function packageExists($package_id) {
+    public static function exists($package_id) {
         return self::find($package_id) ?? false;
+    }
+
+    public function freelancer()
+    {
+        return $this->belongsTo('App\Models\Freelancer');
     }
 }

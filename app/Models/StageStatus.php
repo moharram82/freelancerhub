@@ -8,7 +8,7 @@ class StageStatus extends Model
 {
     protected $table = 'stages_statuses';
 
-    public static function statusExists($status_id) {
+    public static function exists($status_id) {
         return self::find($status_id) ?? false;
     }
 }

@@ -1,70 +1,43 @@
 <?php $__env->startSection('freelancer-contents'); ?>
 <div class="box">
-    <h2>All Proposals</h2>
+    <h2>All Issued Proposals</h2>
 
-    <p>&nbsp;</p>
+    
+
+    <?php if($proposals->count()): ?>
 
     <table class="table table-hover">
         <thead class="thead-light">
             <tr>
                 <th>Title</th>
-                <th>Developer</th>
+                <th>Customer</th>
                 <th>Delivery</th>
                 <th>Cost</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td><a href="<?php echo e(BASEURL); ?>/freelancers/proposal.php?proposal_id=1">Proposal Title</a></td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+
+        <?php $__currentLoopData = $proposals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $proposal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
             <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
+                <td><a href="<?php echo e(BASEURL); ?>/freelancers/proposal.php?proposal_id=<?php echo e($proposal->id); ?>"><?php echo e($proposal->title); ?></a></td>
+                <td><?php echo e($proposal->customer->name); ?></td>
+                <td><?php echo e($proposal->delivery); ?> days</td>
+                <td>SDG <?php echo e($proposal->price); ?></td>
             </tr>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
         </tbody>
     </table>
+
+    <?php else: ?>
+
+    <p>You do not have any issued proposals!</p>
+
+    <?php endif; ?>
+
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('freelancer.partials.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

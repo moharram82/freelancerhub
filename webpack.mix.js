@@ -12,12 +12,4 @@ let mix = require('laravel-mix');
  */
 
 mix.js('assets/js/app.js', 'public_html/js/')
-    .sass('assets/sass/app.scss', 'public_html/css/')
-    .options({
-        processCssUrls: true,
-        fileLoaderDirs: {
-            images: "img",
-            fonts: "fonts"
-        }
-    }).
-    setPublicPath('public_html');
+    .setPublicPath('public_html');

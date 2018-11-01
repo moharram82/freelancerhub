@@ -8,7 +8,12 @@ class Skill extends Model
 {
     protected $table = 'skills';
 
-    public static function skillExists($skill_id) {
+    public static function exists($skill_id) {
         return self::find($skill_id) ?? false;
+    }
+
+    public function freelancers()
+    {
+        return $this->belongsToMany('App\Models\Freelancer');
     }
 }

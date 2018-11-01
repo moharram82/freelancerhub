@@ -10,8 +10,8 @@ if(!$auth->allowOnly('ROLE_FREELANCER')) {
     exit('You do not have permissions to visit this page.');
 }
 
-if(! $request->query->get('proposal_id') || ! $proposal = Proposal::proposalExists($request->query->get('proposal_id'))) {
-    //redirect('proposals.php');
+if(! $request->query->get('proposal_id') || ! $proposal = Proposal::exists($request->query->get('proposal_id'))) {
+    redirect('proposals.php');
 }
 
 echo $view->make('freelancer.proposal', ['proposal' => $proposal])->render();

@@ -10,8 +10,22 @@ if(!$auth->allowOnly('ROLE_CUSTOMER')) {
     exit('You do not have permissions to visit this page.');
 }
 
-if(! $request->query->get('proposal_id') || ! $proposal = Proposal::proposalExists($request->query->get('proposal_id'))) {
-    //redirect('proposals.php');
+if(! $request->query->get('proposal_id') || ! $proposal = Proposal::exists($request->query->get('proposal_id'))) {
+    redirect('proposals.php');
+}
+
+if($request->request->has('_sign') && $request->request->get('_sign') == '1') {
+
+    // create the contract
+    $contract = new \App\Models\Contract;
+
+    $contract->proposal_id = $proposal->id;
+    $contract->is_completed = 0;
+
+    $contract->save();
+
+    // redirect to contract details page
+    redirect(BASEURL . '/customers/contract.php?contract_id=' . $contract->id);
 }
 
 echo $view->make('customer.proposal', ['proposal' => $proposal])->render();

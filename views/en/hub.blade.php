@@ -12,94 +12,37 @@
 
     <div class="row">
         <div class="col-lg-2 options">
+            options
         </div>
 
         <div class="col-lg-10 results">
             <div class="row freelancers">
+
+                @foreach($freelancers as $freelancer)
+
                 <div class="col-lg-4">
                     <div class="box freelancer-card">
-                        <img src="{{ BASEURL }}/img/users/1.jpg">
-                        <h3><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id=2">Mohammed A. Moharram</a></h3>
-                        <p class="category">UX/UI Designer</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; Khartoum</p>
+                        @if(file_exists(PUBLICPATH . '/img/users/' . $freelancer->user->user_id . '.jpg'))
+                        <img src="{{ BASEURL }}/img/users/{{ $freelancer->user->user_id }}.jpg">
+                        @else
+                        <img src="{{ BASEURL }}/img/users/default.jpg">
+                        @endif
+                        <h3><a href="{{ BASEURL }}/freelancer.php?freelancer_id={{ $freelancer->id }}">{{ $freelancer->firstname }} {{ $freelancer->lastname }}</a></h3>
+                        <p class="category">{{ $freelancer->category->job_title }}</p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; {{ $freelancer->city->city }}</p>
                         <div class="rating">
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            @if($reviews[$freelancer->id] !== 0)
+                                <span>{{ $reviews[$freelancer->id] }}</span>
+                            @else
+                                <span>N/A</span>
+                            @endif
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="box freelancer-card">
-                        <img src="{{ BASEURL }}/img/users/1.jpg">
-                        <h3><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id=2">Mohammed A. Moharram</a></h3>
-                        <p class="category">UX/UI Designer</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; Khartoum</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="box freelancer-card">
-                        <img src="{{ BASEURL }}/img/users/1.jpg">
-                        <h3><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id=2">Mohammed A. Moharram</a></h3>
-                        <p class="category">UX/UI Designer</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; Khartoum</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="box freelancer-card">
-                        <img src="{{ BASEURL }}/img/users/1.jpg">
-                        <h3><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id=2">Mohammed A. Moharram</a></h3>
-                        <p class="category">UX/UI Designer</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; Khartoum</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="box freelancer-card">
-                        <img src="{{ BASEURL }}/img/users/1.jpg">
-                        <h3><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id=2">Mohammed A. Moharram</a></h3>
-                        <p class="category">UX/UI Designer</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; Khartoum</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="box freelancer-card">
-                        <img src="{{ BASEURL }}/img/users/1.jpg">
-                        <h3><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id=2">Mohammed A. Moharram</a></h3>
-                        <p class="category">UX/UI Designer</p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; Khartoum</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
+
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 <?php $__env->startSection('customer-contents'); ?>
 <div class="box">
-    <h2>All Proposals</h2>
-
-    <p>&nbsp;</p>
+    <h2>All Received Proposals</h2>
+    
+    <?php if($proposals->count()): ?>
 
     <table class="table table-hover">
         <thead class="thead-light">
@@ -11,60 +11,33 @@
                 <th>Developer</th>
                 <th>Delivery</th>
                 <th>Cost</th>
+                <th>Date Received</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td><a href="<?php echo e(BASEURL); ?>/customers/proposal.php?proposal_id=1">Proposal Title</a></td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+            <?php $__currentLoopData = $proposals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $proposal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+                <tr>
+                    <td><a href="<?php echo e(BASEURL); ?>/customers/proposal.php?proposal_id=<?php echo e($proposal->id); ?>"><strong><?php echo e($proposal->title); ?></strong></a></td>
+                    <td><a href="<?php echo e(BASEURL); ?>/freelancers/freelancer.php?freelancer_id=<?php echo e($proposal->freelancer_id); ?>"><?php echo e($proposal->freelancer->firstname); ?> <?php echo e($proposal->freelancer->lastname); ?></a></td>
+                    <td><?php echo e($proposal->id); ?> days</td>
+                    <td>SDG<?php echo e($proposal->price); ?></td>
+                    <td><?php echo e($proposal->created_at); ?></td>
+                </tr>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
         </tbody>
     </table>
+
+    <?php else: ?>
+
+        <p>You do not have any received proposals!</p>
+
+    <?php endif; ?>
+
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('customer.partials.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

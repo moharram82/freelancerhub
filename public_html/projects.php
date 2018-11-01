@@ -2,4 +2,8 @@
 
 require_once '../init.php';
 
-echo $view->make('projects')->render();
+use App\Models\RFQ;
+
+$rfqs = RFQ::all();
+
+echo $view->make('projects', ['rfqs' => $rfqs])->render();

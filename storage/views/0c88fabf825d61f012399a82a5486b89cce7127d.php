@@ -45,9 +45,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo e(BASEURL); ?>/hub.php" title="Find a freelancer to hire!">Hub</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(BASEURL); ?>/search.php">Search</a>
-                            </li>
                         </ul>
                         <ul class="auth navbar-nav">
 
@@ -56,7 +53,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="<?php echo e(config('auth.profile_path')); ?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php if(! file_exists(PUBLICPATH . '/img/users/' . auth()->id() .'.jpg')): ?>
-                                        <i class="fas fa-user-circle" style="font-size: 30px; vertical-align: middle;"></i>
+                                        <img class="profile-pic" src="<?php echo e(BASEURL); ?>/img/users/default.jpg">
                                     <?php else: ?>
                                         <img class="profile-pic" src="<?php echo e(BASEURL); ?>/img/users/<?php echo e(auth()->id()); ?>.jpg">
                                     <?php endif; ?>

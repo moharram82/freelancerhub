@@ -18,7 +18,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eveniet tenetur ipsa mollitia incidunt rem dignissimos eos atque libero alias natus impedit pariatur laboriosam ipsum quo quisquam error, velit temporibus.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eveniet tenetur ipsa mollitia incidunt rem dignissimos eos atque libero alias natus impedit pariatur laboriosam ipsum quo quisquam error, velit temporibus.</p>
 
-                    <a class="btn btn-success btn-lg btn-block" href="#">Apply!</a>
+                    <a class="btn btn-success btn-lg btn-block" href="<?php echo e(BASEURL); ?>/freelancers/proposals.php?action=new&customer_id=1">Apply!</a>
                 </div>
             </div>
         </div>

@@ -2,9 +2,9 @@
 
 @section('customer-contents')
 <div class="box">
-    <h2>All Proposals</h2>
+    <h2>All Received Proposals</h2>
 
-    <p>&nbsp;</p>
+    @if($proposals->count())
 
     <table class="table table-hover">
         <thead class="thead-light">
@@ -13,59 +13,32 @@
                 <th>Developer</th>
                 <th>Delivery</th>
                 <th>Cost</th>
+                <th>Date Received</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td><a href="{{ BASEURL }}/customers/proposal.php?proposal_id=1">Proposal Title</a></td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+            @foreach($proposals as $proposal)
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+                <tr>
+                    <td><a href="{{ BASEURL }}/customers/proposal.php?proposal_id={{ $proposal->id }}"><strong>{{ $proposal->title }}</strong></a></td>
+                    <td><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id={{ $proposal->freelancer_id }}">{{ $proposal->freelancer->firstname }} {{ $proposal->freelancer->lastname }}</a></td>
+                    <td>{{ $proposal->id }} days</td>
+                    <td>SDG{{ $proposal->price }}</td>
+                    <td>{{ $proposal->created_at }}</td>
+                </tr>
 
-            <tr>
-                <td>Proposal Title</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
+            @endforeach
 
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
-
-            <tr>
-                <td>Test Project</td>
-                <td>Mohammed Moharram</td>
-                <td>3 weeks</td>
-                <td>SDG 25,000</td>
-            </tr>
         </tbody>
     </table>
+
+    @else
+
+        <p>You do not have any received proposals!</p>
+
+    @endif
+
 </div>
 @endsection

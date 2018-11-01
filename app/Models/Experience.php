@@ -8,7 +8,12 @@ class Experience extends Model
 {
     protected $table = 'experiences';
 
-    public static function experienceExists($experience_id) {
+    public static function exists($experience_id) {
         return self::find($experience_id) ?? false;
+    }
+
+    public function freelancer()
+    {
+        return $this->belongsTo('App\Models\Freelancer');
     }
 }

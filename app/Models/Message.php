@@ -8,7 +8,7 @@ class Message extends Model
 {
     protected $table = 'messages';
 
-    public static function messageExists($message_id) {
+    public static function exists($message_id) {
         return self::find($message_id) ?? false;
     }
 }

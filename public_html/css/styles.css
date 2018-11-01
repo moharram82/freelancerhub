@@ -43,6 +43,29 @@ a:hover {
     border: 1px solid #e9edf0;
     border-radius: 5px;
 }
+.ck-editor__editable {
+    min-height: 400px;
+}
+table.meta-data {
+    font-size: 12px;
+    margin-bottom: 40px;
+}
+table.meta-data td {
+    margin: 0;
+    padding: 0 10px 0 0;
+}
+table.meta-data td.data {
+    font-weight: 700;
+}
+table.data-wrapper {
+    margin: 40px 0;
+}
+table.data-wrapper td {
+    padding: 10px;
+}
+table.data-wrapper td.data-label {
+    font-weight: 700;
+}
 
 /*==================================
 ** Header styles
@@ -166,28 +189,40 @@ div.sidebar-section ul.section-nav li a:hover {
     /* padding: 10px 20px; */
     border-radius: 3px;
 }
-p.project-timing {
-    font-size: 12px;
+div.accordion div.card {
+    margin: 0 0 20px 0;
 }
-span.stage-title {
-    color: #5c6b78;
-    font-size: 18px;
-    font-weight: 700;
-    display: block;
+div.accordion div.card div.collapse {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+div.card-header {
+    background-color: #f7fafd;
 }
 div.card-header h5 {
+    margin: 0;
+    padding: 0;
     float: left;
 }
 div.card-header h5 button {
     text-align: left;
+    margin: 0;
+    padding: 0 10px;
 }
-span.stage-timing {
+div.card-header h5 button span.stage-title {
     color: #5c6b78;
-    font-size: 12px;
-    /*float: right;*/
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
-div.card-header {
-    background-color: #e9ecef;
+
+div.card-header h5 button span.stage-timing {
+    color: #a4b7c4;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    /*float: right;*/
 }
 div.card-header h5 button:hover {
     text-decoration: none;
@@ -195,28 +230,39 @@ div.card-header h5 button:hover {
 div.card-header h5 button:hover span.stage-title {
     color: #1a7cc8;
 }
-span.stage-status {
+div.card-header span.stage-status {
     font-weight: 700;
     font-variant: small-caps;
     display: block;
-    margin-top: 27px;
+    margin-top: 20px;
     margin-right: 20px;
     width: 10px;
     height: 10px;
     float: right;
     border-radius: 25px;
 }
-span.stage-status.stage-status-active {
+div.card-header span.stage-status.stage-status-active {
     background-color: limegreen;
 }
-span.stage-status.stage-status-pending {
+div.card-header span.stage-status.stage-status-pending {
     background-color: orange;
 }
-span.stage-status.stage-status-delayed {
+div.card-header span.stage-status.stage-status-delayed {
     background-color: red;
 }
-span.stage-status.stage-status-completed {
+div.card-header span.stage-status.stage-status-completed {
     background-color: darkgrey;
+}
+div.card-body  {
+    margin: 0;
+    padding: 30px;
+}
+div.card-body h5 {
+    font-size: 16px;
+    font-weight: 400;
+}
+div.card-body p {
+    font-size: 14px;
 }
 
 /*==================================
@@ -259,6 +305,11 @@ div.secondary-info div.rating i {
     color: rgb(240, 156, 1);
     font-size: 28px;
     margin-bottom: 10px;
+}
+div.secondary-info div.rating span {
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: 5px;
 }
 div.secondary-info ul.social-media {
     font-size: 35px;
@@ -486,6 +537,27 @@ div.project-details p.budget {
 div.project-details p.budget span {
     font-weight: 700;
 }
+div.customer-info {}
+div.customer-info div.box {
+    padding: 40px;
+}
+div.customer-info img.picture {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 50px;
+}
+div.customer-info h3 {
+    font-size: 16px;
+    margin: 0;
+}
+div.customer-info p.location {
+    font-size: 12px;
+}
+div.customer-info p.desc {
+    margin: 0;
+}
 
 /*==================================
 ** Hub Page styles
@@ -523,15 +595,21 @@ div.freelancer-card p.category {
     margin: 0;
     padding: 0;
 }
-div.freelancer-card div.rating {
+div.freelancer-card div.rating i {
     color: rgb(240, 156, 1);
 }
+div.freelancer-card div.rating span {
+    font-weight: 700;
+}
 div.freelancer-card p.location {
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
     padding: 0;
 }
 
+/*==================================
+** Freelancer Profile Backend styles
+*==================================*/
 
 /*==================================
 ** Footer styles

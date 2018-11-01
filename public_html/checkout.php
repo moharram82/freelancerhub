@@ -11,11 +11,11 @@ use App\Models\Customer;
 //     exit('You need to <a href="/login.php">login</a> in order to complete the order.');
 // }
 
-if(! $request->query->get('package_id') || ! $package = Package::packageExists($request->query->get('package_id'))) {
+if(! $request->query->get('package_id') || ! $package = Package::exists($request->query->get('package_id'))) {
     //redirect('BASEURL.php);
 }
 
-if(! $request->query->get('customer_id') || ! $customer = Customer::customerExists($request->query->get('customer_id'))) {
+if(! $request->query->get('customer_id') || ! $customer = Customer::exists($request->query->get('customer_id'))) {
     //redirect('BASEURL.php);
 }
 

@@ -15,16 +15,16 @@
                 <div class="sidebar-section">
                     <h4>Main</h4>
                     <ul class="section-nav">
-                        <li><a href="<?php echo e(BASEURL); ?>/customers/index.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                        <li><a href="<?php echo e(BASEURL); ?>/customers/projects.php"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                        <li><a href="<?php echo e(BASEURL); ?>/customers/proposals.php"><i class="fas fa-file-invoice-dollar"></i> Proposals</a></li>
+                        <li><a href="<?php echo e(BASEURL); ?>/customers/index.php"><i class="fas fa-tachometer-alt"></i>&nbsp; Dashboard</a></li>
+                        <li><a href="<?php echo e(BASEURL); ?>/customers/contracts.php"><i class="fas fa-project-diagram"></i> Contracts</a></li>
+                        <li><a href="<?php echo e(BASEURL); ?>/customers/proposals.php"><i class="fas fa-file-invoice-dollar"></i>&nbsp;&nbsp;&nbsp; Proposals</a></li>
                     </ul>
                 </div>
                 <div class="sidebar-section">
                     <h4>Account</h4>
                     <ul class="section-nav">
-                        <li><a href="<?php echo e(BASEURL); ?>/messages.php"><i class="fas fa-inbox"></i> Inbox</a></li>
-                        <li><a href="<?php echo e(BASEURL); ?>/customers/profile.php"><i class="fas fa-address-card"></i> Edit Profile</a></li>
+                        <li><a href="<?php echo e(BASEURL); ?>/customers/profile.php"><i class="fas fa-address-card"></i> Profile</a></li>
+                        <li><a href="<?php echo e(BASEURL); ?>/messages.php"><i class="fas fa-envelope"></i> Messages</a></li>
                         <li><a href="<?php echo e(config('auth.logout_path')); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </div>

@@ -5,7 +5,12 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('contents'); ?>
+
+<div class="box">
+
     <h1>Search</h1>
+
+</div>
 
 <?php $__env->stopSection(); ?>
 

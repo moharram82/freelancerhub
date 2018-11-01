@@ -11,18 +11,7 @@ use Illuminate\Hashing\BcryptHasher;
 $hasher = new BcryptHasher();
 $faker = Factory::create('en_SD');
 
-$cities = [
-    'Khartoum',
-    'Port-Sudan',
-    'Atbara',
-    'Shandi',
-    'Ubayed',
-    'Kassala',
-    'Kusti',
-    'Kurdufan',
-    'Darfur',
-    'Madani'
-];
+$cities = [1,2,3,4,5,6,7,8,9];
 
 $customerTypes = [
     'individual',
@@ -95,9 +84,10 @@ function freelancerSeed($user_id, $faker) {
 
     $freelancer = new Freelancer;
 
-    $freelancer->name = $faker->name;
+    $freelancer->firstname = $faker->name;
+    $freelancer->lastname = $faker->name;
     $freelancer->birthdate = $faker->date('Y-m-d', '2000-10-01');
-    $freelancer->location = $faker->randomElement($cities);
+    $freelancer->city_id = $faker->randomElement($cities);
     $freelancer->languages = $faker->randomElement(['Arabic', 'Arabic,English', 'Arabic,English,French']);
     $freelancer->category_id = $faker->numberBetween(1, 12);
     $freelancer->mobile = phoneNumber($faker);
@@ -132,6 +122,61 @@ function newUser($hasher, $faker) {
     return $user;
 }
 
+function createProposal($faker) {
+
+    // get available freelancers & customers
+    $freelancers = [];
+    $customers = [];
+
+    foreach (Freelancer::all() as $freelancer) {
+        $freelancers[] = $freelancer->id;
+    }
+
+    foreach (Customer::all() as $customer) {
+        $customers[] = $customer->id;
+    }
+
+    // create the proposal
+    $proposal = new \App\Models\Proposal;
+    $proposal->freelancer_id = $faker->randomElement($freelancers);
+    $proposal->customer_id = $faker->randomElement($customers);
+    $proposal->title = $faker->sentence;
+    $proposal->price = $faker->numberBetween(1000, 100000);
+    $proposal->delivery = $faker->numberBetween(1, 365);
+    $proposal->validity = $faker->numberBetween(3, 7);
+    $proposal->details = $faker->text(10000);
+
+    $proposal->save();
+
+    return $proposal;
+}
+
+function createContract($faker) {
+
+    // create proposal first
+    $proposal = createProposal($faker);
+
+    // create the contract
+    $contract = new \App\Models\Contract;
+    $contract->proposal_id = $proposal->id;
+
+    $start_date = $faker->dateTimeBetween($startDate = $proposal->created_at, $endDate = '2 weeks', $timezone = 'Africa/Khartoum')->format('Y-m-d');
+    $contract->start_date = $start_date;
+
+    $deliver_in_seconds = $proposal->delivery*24*60*60;
+
+    if(strtotime($start_date) + $deliver_in_seconds > time()) {
+        $contract->is_completed = 0;
+    } else {
+        $contract->is_completed = 1;
+    }
+
+    $contract->save();
+
+    return $contract;
+}
+
 for($i=0; $i<100; $i++) {
 //    $user = newUser($hasher, $faker);
+//    $contract = createContract($faker);
 }
