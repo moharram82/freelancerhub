@@ -24,6 +24,7 @@
                     <h4>Account</h4>
                     <ul class="section-nav">
                         <li><a href="<?php echo e(BASEURL); ?>/customers/profile.php"><i class="fas fa-address-card"></i> Profile</a></li>
+                        <li><a href="<?php echo e(BASEURL); ?>/customers/balance.php"><i class="far fa-credit-card"></i> Balance</a></li>
                         <li><a href="<?php echo e(BASEURL); ?>/messages.php"><i class="fas fa-envelope"></i> Messages</a></li>
                         <li><a href="<?php echo e(config('auth.logout_path')); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>

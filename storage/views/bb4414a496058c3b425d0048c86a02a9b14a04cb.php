@@ -1,7 +1,7 @@
 <?php $__env->startSection('customer-contents'); ?>
 <div class="box">
     <h2>All Received Proposals</h2>
-    
+
     <?php if($proposals->count()): ?>
 
     <table class="table table-hover">
@@ -11,7 +11,7 @@
                 <th>Developer</th>
                 <th>Delivery</th>
                 <th>Cost</th>
-                <th>Date Received</th>
+                <th>Received</th>
             </tr>
         </thead>
 
@@ -24,7 +24,7 @@
                     <td><a href="<?php echo e(BASEURL); ?>/freelancers/freelancer.php?freelancer_id=<?php echo e($proposal->freelancer_id); ?>"><?php echo e($proposal->freelancer->firstname); ?> <?php echo e($proposal->freelancer->lastname); ?></a></td>
                     <td><?php echo e($proposal->id); ?> days</td>
                     <td>SDG<?php echo e($proposal->price); ?></td>
-                    <td><?php echo e($proposal->created_at); ?></td>
+                    <td><?php echo e(\Carbon\Carbon::make($proposal->created_at)->diffForHumans()); ?></td>
                 </tr>
 
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

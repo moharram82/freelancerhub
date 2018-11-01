@@ -12,7 +12,7 @@
                 <th>Title</th>
                 <th>Developer</th>
                 <th>Start Date</th>
-                <th>Cost</th>
+                <th>Cost (SDG)</th>
                 <th>Status</th>
             </tr>
         </thead>

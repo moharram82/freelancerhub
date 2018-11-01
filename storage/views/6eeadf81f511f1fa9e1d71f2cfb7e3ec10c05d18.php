@@ -7,9 +7,9 @@
         <br>
 
         <?php if(file_exists(PUBLICPATH . '/img/users/' . $freelancer->user->user_id . '.jpg')): ?>
-            <img style="max-width: 256px;" src="<?php echo e(BASEURL); ?>/img/users/<?php echo e($freelancer->user->user_id); ?>.jpg">
+            <img class="float-right mt-5 rounded-circle" style="max-width: 256px;" src="<?php echo e(BASEURL); ?>/img/users/<?php echo e($freelancer->user->user_id); ?>.jpg">
         <?php else: ?>
-            <img style="max-width: 256px;" src="<?php echo e(BASEURL); ?>/img/users/default.jpg">
+            <img class="float-right mt-5 rounded-circle" style="max-width: 256px;" src="<?php echo e(BASEURL); ?>/img/users/default.jpg">
         <?php endif; ?>
 
         <table class="data-wrapper">

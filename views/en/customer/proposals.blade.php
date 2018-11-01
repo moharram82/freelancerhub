@@ -13,7 +13,7 @@
                 <th>Developer</th>
                 <th>Delivery</th>
                 <th>Cost</th>
-                <th>Date Received</th>
+                <th>Received</th>
             </tr>
         </thead>
 
@@ -26,7 +26,7 @@
                     <td><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id={{ $proposal->freelancer_id }}">{{ $proposal->freelancer->firstname }} {{ $proposal->freelancer->lastname }}</a></td>
                     <td>{{ $proposal->id }} days</td>
                     <td>SDG{{ $proposal->price }}</td>
-                    <td>{{ $proposal->created_at }}</td>
+                    <td>{{ \Carbon\Carbon::make($proposal->created_at)->diffForHumans() }}</td>
                 </tr>
 
             @endforeach

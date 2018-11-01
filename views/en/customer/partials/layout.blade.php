@@ -26,6 +26,7 @@
                     <h4>Account</h4>
                     <ul class="section-nav">
                         <li><a href="{{ BASEURL }}/customers/profile.php"><i class="fas fa-address-card"></i> Profile</a></li>
+                        <li><a href="{{ BASEURL }}/customers/balance.php"><i class="far fa-credit-card"></i> Balance</a></li>
                         <li><a href="{{ BASEURL }}/messages.php"><i class="fas fa-envelope"></i> Messages</a></li>
                         <li><a href="{{ config('auth.logout_path') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>

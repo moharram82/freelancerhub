@@ -18,6 +18,7 @@
                     <h4>Main</h4>
                     <ul class="section-nav">
                         <li><a href="{{ BASEURL }}/freelancers/index.php"><i class="fas fa-tachometer-alt"></i>&nbsp; Dashboard</a></li>
+                        <li><a href="{{ BASEURL }}/freelancers/packages.php"><i class="fas fa-cubes"></i> &nbsp; Packages</a></li>
                         <li><a href="{{ BASEURL }}/freelancers/contracts.php"><i class="fas fa-project-diagram"></i>&nbsp; Contracts</a></li>
                         <li><a href="{{ BASEURL }}/freelancers/proposals.php"><i class="fas fa-file-invoice-dollar"></i>&nbsp;&nbsp;&nbsp; Proposals</a></li>
                     </ul>
@@ -26,7 +27,7 @@
                     <h4>Account</h4>
                     <ul class="section-nav">
                         <li><a href="{{ BASEURL }}/freelancers/profile.php"><i class="fas fa-address-card"></i> Profile</a></li>
-                        <li><a href="{{ BASEURL }}/freelancers/packages.php"><i class="fas fa-cubes"></i> Packages</a></li>
+                        <li><a href="{{ BASEURL }}/freelancers/balance.php"><i class="far fa-credit-card"></i> Balance</a></li>
                         <li><a href="{{ BASEURL }}/messages.php"><i class="fas fa-envelope"></i> Messages</a></li>
                         <li><a href="{{ config('auth.logout_path') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>

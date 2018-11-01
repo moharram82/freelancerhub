@@ -9,9 +9,9 @@
         <br>
 
         @if(file_exists(PUBLICPATH . '/img/users/' . $freelancer->user->user_id . '.jpg'))
-            <img style="max-width: 256px;" src="{{ BASEURL }}/img/users/{{ $freelancer->user->user_id }}.jpg">
+            <img class="float-right mt-5 rounded-circle" style="max-width: 256px;" src="{{ BASEURL }}/img/users/{{ $freelancer->user->user_id }}.jpg">
         @else
-            <img style="max-width: 256px;" src="{{ BASEURL }}/img/users/default.jpg">
+            <img class="float-right mt-5 rounded-circle" style="max-width: 256px;" src="{{ BASEURL }}/img/users/default.jpg">
         @endif
 
         <table class="data-wrapper">

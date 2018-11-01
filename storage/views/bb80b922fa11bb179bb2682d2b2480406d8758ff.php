@@ -58,6 +58,10 @@
                 <input type="text" name="mobile" class="form-control" id="mobile" value="<?php echo e($mobile); ?>">
             </div>
             <div class="form-group">
+                <label for="languages">Languages (comma separated)</label>
+                <input type="text" name="languages" class="form-control" id="languages" value="<?php echo e($languages); ?>">
+            </div>
+            <div class="form-group">
                 <label for="response_time">Response Time (in hours)</label>
                 <input type="number" name="response_time" class="form-control" id="response_time" value="<?php echo e($response_time); ?>">
             </div>

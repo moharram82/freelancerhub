@@ -19,6 +19,7 @@ if($request->query->has('action') && $request->query->get('action') == 'edit') {
     $lastname = $freelancer->lastname;
     $birthdate = $freelancer->birthdate;
     $mobile = $freelancer->mobile;
+    $languages = $freelancer->languages;
     $response_time = $freelancer->response_time;
     $experience = $freelancer->experience;
     $description = $freelancer->description;
@@ -68,6 +69,12 @@ if($request->query->has('action') && $request->query->get('action') == 'edit') {
             $errors[] = 'Wrong mobile number';
         }
 
+        $languages = $request->request->get('languages');
+
+        if(empty($languages)) {
+            $errors[] = 'Languages can not be empty';
+        }
+
         $response_time = $request->request->get('response_time');
 
         if(! is_numeric($response_time)) {
@@ -113,6 +120,7 @@ if($request->query->has('action') && $request->query->get('action') == 'edit') {
             $freelancer->lastname = $lastname;
             $freelancer->birthdate = $birthdate;
             $freelancer->mobile = $mobile;
+            $freelancer->languages = $languages;
             $freelancer->response_time = $response_time;
             $freelancer->experience = $experience;
             $freelancer->description = $description;
@@ -145,6 +153,7 @@ if($request->query->has('action') && $request->query->get('action') == 'edit') {
         'lastname' => $lastname,
         'birthdate' => $birthdate,
         'mobile' => $mobile,
+        'languages' => $languages,
         'response_time' => $response_time,
         'experience' => $experience,
         'description' => $description,
