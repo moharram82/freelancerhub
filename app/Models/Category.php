@@ -12,8 +12,13 @@ class Category extends Model
         return self::find($category_id) ?? false;
     }
 
-    public function subCategories()
+    public function freelancers()
     {
-        return $this->hasMany('App\Models\SubCategory');
+        return $this->hasMany('App\Models\Freelancer');
+    }
+
+    public function rfqs()
+    {
+        return $this->hasMany('App\Models\RFQ');
     }
 }

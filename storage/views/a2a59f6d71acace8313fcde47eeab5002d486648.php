@@ -1,4 +1,4 @@
-<?php $__env->startSection('title'); ?> Freelancer Name <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?> <?php echo e($freelancer->firstname); ?> <?php echo e($freelancer->lastname); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 
@@ -118,7 +118,7 @@
                     <h3>Skills</h3>
                     <ul class="skills">
                         <?php $__currentLoopData = $freelancer->skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><a href="#"><?php echo e($skill->skill_name); ?></a></li>
+                            <li><a href="<?php echo e(BASEURL); ?>/hub.php?filter_by=skill&value=<?php echo e($skill->id); ?>"><?php echo e($skill->skill_name); ?></a></li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
 

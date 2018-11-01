@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Freelancer extends Model
@@ -35,7 +34,7 @@ class Freelancer extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\Models\SubCategory', 'category_id', 'id');
+        return $this->belongsTo('App\Models\Category');
     }
 
     public function city()

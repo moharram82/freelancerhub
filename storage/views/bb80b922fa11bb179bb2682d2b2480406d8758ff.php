@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label for="category_id">Category</label>
                 <select name="category_id" class="form-control" id="category_id">
-                    <?php $__currentLoopData = \App\Models\SubCategory::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = \App\Models\Category::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($category->id == $category_id): ?>
                         <option selected value="<?php echo e($category->id); ?>"><?php echo e($category->sub_category); ?></option>
                         <?php else: ?>

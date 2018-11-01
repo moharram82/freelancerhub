@@ -19,6 +19,6 @@ class RFQ extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\Models\SubCategory', 'category_id');
+        return $this->belongsTo('App\Models\Category');
     }
 }

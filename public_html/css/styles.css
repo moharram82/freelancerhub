@@ -190,13 +190,13 @@ div.sidebar-section ul.section-nav li a:hover {
     border-radius: 3px;
 }
 div.accordion div.card {
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
 }
 div.accordion div.card div.collapse {
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 div.card-header {
-    background-color: #f7fafd;
+    background-color: #f7f8fc;
 }
 div.card-header h5 {
     margin: 0;
@@ -562,7 +562,50 @@ div.customer-info p.desc {
 /*==================================
 ** Hub Page styles
 *==================================*/
-div.options {}
+div.options {
+    margin: 80px 0 0 0;
+}
+div.options div.sidebar h3 {
+    color: #9bafb9;
+    font-size: 14px;
+    font-weight: 400;
+    font-variant: small-caps;
+    margin: 0 0 40px 0;
+}
+div.options div.sidebar-section {
+    margin-bottom: 50px;
+}
+div.options div.sidebar-section h4 {
+    color: #758491;
+    font-size: 14px;
+    font-weight: 700;
+    font-variant: small-caps;
+    margin-bottom: 10px;
+}
+div.options div.sidebar-section ul.section-nav {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+div.options div.sidebar-section ul.section-nav li {
+    margin: 0 0 10px 0;
+    padding: 0;
+
+}
+div.options div.sidebar-section ul.section-nav li a {
+    color: #9bafb9;
+    display: block;
+    margin: 0;
+    padding: 0;
+    transition: color 300ms ease-in-out;
+}
+div.options div.sidebar-section ul.section-nav li a:hover {
+    color: #5c6b78;
+    font-weight: 400;
+    text-decoration: none;
+}
 div.box.freelancer-card {
     padding: 20px;
 }

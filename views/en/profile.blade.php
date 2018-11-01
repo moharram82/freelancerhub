@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title') Freelancer Name @endsection
+@section('title') {{ $freelancer->firstname }} {{ $freelancer->lastname }} @endsection
 
 @section('styles')
 
@@ -119,7 +119,7 @@
                     <h3>Skills</h3>
                     <ul class="skills">
                         @foreach($freelancer->skills as $skill)
-                            <li><a href="#">{{ $skill->skill_name }}</a></li>
+                            <li><a href="{{ BASEURL }}/hub.php?filter_by=skill&value={{ $skill->id }}">{{ $skill->skill_name }}</a></li>
                         @endforeach
                     </ul>
 

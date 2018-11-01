@@ -6,7 +6,13 @@
 
         
 
-        <p>Your balance is: <strong>SDG <?php echo e($freelancer->balance); ?></strong></p>
+        <p>Your balance is: <strong>SDG
+                <?php if($freelancer->balance < 1000): ?>
+                <span style="color: #ff0000;"><?php echo e($freelancer->balance); ?></span>
+                <?php else: ?>
+                <span style="color: limegreen;"><?php echo e($freelancer->balance); ?></span>
+                <?php endif; ?>
+        </strong></p>
 
     </div>
 

@@ -59,14 +59,15 @@ if($request->query->has('action') && $request->query->get('action') == 'edit') {
 
         // profile picture validation & upload
         if($request->files->get('picture')) {
-            $fileUploader = new \moharram82\File\FileUploader(PUBLICPATH . '/img/users/', $customer->user->user_id . '.jpg');
 
-            if($request->files->get('picture')->getClientMimeType() != 'image/jpeg') {
+            if($request->files->get('picture')->getClientMimeType() !== 'image/jpeg') {
                 $errors[] = 'Profile picture must be of type jpg only.';
+            } else {
+                $fileUploader = new \moharram82\File\FileUploader(PUBLICPATH . '/img/users/', $customer->user->user_id . '.jpg');
             }
 
             if(empty($errors)) {
-                if (!$profilePicture = $fileUploader->upload($request->files->get('picture'))) {
+                if (!$profilePicture = $fileUploader->upload($request->files->get('picture'), 256, 256)) {
                     $errors[] = $fileUploader->getErrors();
                 }
             }

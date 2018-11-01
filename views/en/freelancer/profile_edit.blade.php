@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label for="category_id">Category</label>
                 <select name="category_id" class="form-control" id="category_id">
-                    @foreach(\App\Models\SubCategory::all() as $category)
+                    @foreach(\App\Models\Category::all() as $category)
                         @if($category->id == $category_id)
                         <option selected value="{{ $category->id }}">{{ $category->sub_category }}</option>
                         @else

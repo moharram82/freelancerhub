@@ -23,7 +23,8 @@
     "illuminate/encryption": "~5.5.0",
     "illuminate/hashing": "~5.5.0",
     "nesbot/carbon": "~1.0",
-    "moharram82/monolog": "~1.0"
+    "moharram82/monolog": "~1.0",
+    "intervention/image": "^2.4"
   },
   "require-dev": {
     "filp/whoops": "~2.1",
