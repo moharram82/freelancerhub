@@ -53,7 +53,7 @@
                             @foreach($rfqs as $rfq)
 
                                 <tr>
-                                    <td><a href="{{ BASEURL }}/rfq.php?rfq_id=1">{{ $rfq->title }}</a></td>
+                                    <td><a href="{{ BASEURL }}/rfq.php?rfq_id={{ $rfq->id }}">{{ $rfq->title }}</a></td>
                                     <td>{{ $rfq->customer->name }}</td>
                                     <td>{{ $rfq->category->sub_category }}</td>
                                     <td>SDG {{ number_format($rfq->budget, 0) }}</td>

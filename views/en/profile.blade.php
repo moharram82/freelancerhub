@@ -23,7 +23,11 @@
                 <h1>{{ $freelancer->firstname }} {{ $freelancer->lastname }}</h1>
                 <p class="subtitle">{{ $freelancer->category->job_title }}</p>
                 <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; {{ $freelancer->city->city }}</p>
+                @if(auth()->check() && auth()->isGranted('ROLE_CUSTOMER'))
                 <a href="{{ BASEURL }}/customers/rfqs.php?action=new&freelancer_id={{ $freelancer->id }}" class="btn btn-success btn-lg btn-block">Hire Me!</a>
+                @elseif(! auth()->check())
+                <a href="{{ BASEURL }}/login.php" class="btn btn-outline-primary btn-lg btn-block">Login to Hire Me!</a>
+                @endif
             </div>
         </div>
 

@@ -3,7 +3,11 @@
 <?php $__env->startSection('customer-contents'); ?>
 
     <div class="row">
+        <?php if(isset($rfq->freelancer->user->user_id)): ?>
         <div class="col-lg-8 project-details">
+        <?php else: ?>
+        <div class="col-lg-12 project-details">
+        <?php endif; ?>
             <div class="box">
 
                 <h1><?php echo e($rfq->title); ?></h1>
@@ -20,7 +24,9 @@
                 </div>
             </div>
         </div>
+        <?php if(isset($rfq->freelancer->user->user_id)): ?>
         <div class="col-lg-4 customer-info">
+
             <div class="box">
 
                 <div class="clearfix">
@@ -36,6 +42,7 @@
                 <p class="desc"><?php echo e($rfq->freelancer->description); ?></p>
             </div>
         </div>
+        <?php endif; ?>
     </div>
 
 <?php $__env->stopSection(); ?>

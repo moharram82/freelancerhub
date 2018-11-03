@@ -4,7 +4,7 @@
 <div class="box">
     <h2>All RFQs</h2>
 
-    
+    <a class="btn btn-primary mb-4 mt-3" href="<?php echo e(BASEURL); ?>/customers/rfqs.php?action=new">Create Public RFQ</a>
 
     <?php if($rfqs->count()): ?>
 
@@ -25,7 +25,7 @@
 
             <tr>
                 <td><a href="<?php echo e(BASEURL); ?>/customers/rfq.php?rfq_id=<?php echo e($rfq->id); ?>"><?php echo e($rfq->title); ?></a></td>
-                <td><?php echo e($rfq->freelancer->firstname); ?> <?php echo e($rfq->freelancer->lastname); ?></td>
+                <td><?php echo e(@$rfq->freelancer->firstname); ?> <?php echo e(@$rfq->freelancer->lastname); ?></td>
                 <td><?php echo e($rfq->category->sub_category); ?></td>
                 <td>SDG <?php echo e(number_format($rfq->budget, 0)); ?></td>
                 <td>

@@ -21,7 +21,11 @@
                 <h1><?php echo e($freelancer->firstname); ?> <?php echo e($freelancer->lastname); ?></h1>
                 <p class="subtitle"><?php echo e($freelancer->category->job_title); ?></p>
                 <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; <?php echo e($freelancer->city->city); ?></p>
+                <?php if(auth()->check() && auth()->isGranted('ROLE_CUSTOMER')): ?>
                 <a href="<?php echo e(BASEURL); ?>/customers/rfqs.php?action=new&freelancer_id=<?php echo e($freelancer->id); ?>" class="btn btn-success btn-lg btn-block">Hire Me!</a>
+                <?php elseif(! auth()->check()): ?>
+                <a href="<?php echo e(BASEURL); ?>/login.php" class="btn btn-outline-primary btn-lg btn-block">Login to Hire Me!</a>
+                <?php endif; ?>
             </div>
         </div>
 

@@ -5,7 +5,11 @@
 @section('customer-contents')
 
     <div class="row">
+        @if(isset($rfq->freelancer->user->user_id))
         <div class="col-lg-8 project-details">
+        @else
+        <div class="col-lg-12 project-details">
+        @endif
             <div class="box">
 
                 <h1>{{ $rfq->title }}</h1>
@@ -21,7 +25,9 @@
                 </div>
             </div>
         </div>
+        @if(isset($rfq->freelancer->user->user_id))
         <div class="col-lg-4 customer-info">
+
             <div class="box">
 
                 <div class="clearfix">
@@ -37,6 +43,7 @@
                 <p class="desc">{{ $rfq->freelancer->description }}</p>
             </div>
         </div>
+        @endif
     </div>
 
 @endsection

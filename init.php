@@ -121,21 +121,6 @@ $capsule->bootEloquent();
 
 /*
  * -------------------------------------------------------------------
- *  Monolog Logging Library
- * -------------------------------------------------------------------
- */
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Monolog\Handler\PDOHandler;
-use Monolog\Handler\MySQLiHandler;
-// Create the main logger
-$logger = new Logger('general');
-// Add Handlers
-$logger->pushHandler(new StreamHandler(BASEPATH . '/storage/logs/logs.log', Logger::DEBUG));
-$logger->pushHandler(new PDOHandler($pdo));
-
-/*
- * -------------------------------------------------------------------
  *  SESSION INITIALIZATION
  * -------------------------------------------------------------------
  */

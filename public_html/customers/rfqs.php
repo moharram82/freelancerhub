@@ -93,6 +93,85 @@ if($request->query->has('action') && $request->query->get('action') == 'new' && 
         'details' => $details,
         'freelancer' => $freelancer,
     ])->render();
+} elseif($request->query->has('action') && $request->query->get('action') == 'new') {
+
+    $errors = [];
+    $errorMsg = '';
+
+    $title = '';
+    $budget = 0;
+    $category_id = 1;
+    $details = '';
+
+    // check if a form has been submitted
+    if($request->request->has('btnAdd')) {
+
+        // validate input data
+
+        // title validation
+        if(empty($request->request->get('title'))) {
+            $errors[] = 'Title can not be empty';
+        } elseif (mb_strlen($request->request->get('title')) < 5) {
+            $errors[] = 'Title is too short';
+        } elseif (mb_strlen($request->request->get('title')) > 255) {
+            $errors[] = 'Title is too long';
+        }
+
+        $title = $request->request->get('title');
+
+        // budget validation
+        if(empty($request->request->get('budget'))) {
+            $errors[] = 'Budget can not be empty';
+        } elseif (! is_numeric($request->request->get('budget'))) {
+            $errors[] = 'Budget must be a number';
+        }
+
+        $budget = $request->request->get('budget');
+
+        // details validation
+        if(empty($request->request->get('details'))) {
+            $errors[] = 'Details can not be empty';
+        } elseif (mb_strlen($request->request->get('details')) < 10) {
+            $errors[] = 'Details is too short';
+        }
+
+        $details = $request->request->get('details');
+
+        $category_id = $request->request->get('category_id');
+
+
+        if(empty($errors)) {
+            // add package
+            $rfq = new \App\Models\RFQ;
+
+            $rfq->customer_id = User::find(auth()->id())->customer->id;
+            $rfq->title = $title;
+            $rfq->budget = $budget;
+            $rfq->category_id = $category_id;
+            $rfq->details = $details;
+
+            $rfq->save();
+
+            redirect(SELF);
+
+        } else {
+            $errorMsg = '<ul>';
+
+            foreach ($errors as $error) {
+                $errorMsg .= "<li>{$error}</li>";
+            }
+
+            $errorMsg .= '</ul>';
+        }
+    }
+
+    echo $view->make('customer.rfq_new_public', [
+        'errorMsg' => $errorMsg,
+        'title' => $title,
+        'budget' => $budget,
+        'category_id' => $category_id,
+        'details' => $details
+    ])->render();
 } elseif($request->query->has('action') && $request->query->get('action') == 'delete' && $request->query->has('rfq_id') && $rfq = \App\Models\RFQ::exists($request->query->get('rfq_id'))) {
     $rfq->destroy($rfq->id);
 

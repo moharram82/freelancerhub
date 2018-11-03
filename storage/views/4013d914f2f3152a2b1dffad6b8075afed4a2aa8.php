@@ -51,7 +51,7 @@
                             <?php $__currentLoopData = $rfqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rfq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                                 <tr>
-                                    <td><a href="<?php echo e(BASEURL); ?>/rfq.php?rfq_id=1"><?php echo e($rfq->title); ?></a></td>
+                                    <td><a href="<?php echo e(BASEURL); ?>/rfq.php?rfq_id=<?php echo e($rfq->id); ?>"><?php echo e($rfq->title); ?></a></td>
                                     <td><?php echo e($rfq->customer->name); ?></td>
                                     <td><?php echo e($rfq->category->sub_category); ?></td>
                                     <td>SDG <?php echo e(number_format($rfq->budget, 0)); ?></td>

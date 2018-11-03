@@ -6,7 +6,7 @@
 <div class="box">
     <h2>All RFQs</h2>
 
-    {{--<a class="btn btn-primary mb-4 mt-3" href="{{ BASEURL }}/freelancers/proposals.php?action=new&customer_id=1">Create Proposal</a>--}}
+    <a class="btn btn-primary mb-4 mt-3" href="{{ BASEURL }}/customers/rfqs.php?action=new">Create Public RFQ</a>
 
     @if($rfqs->count())
 
@@ -27,7 +27,7 @@
 
             <tr>
                 <td><a href="{{ BASEURL }}/customers/rfq.php?rfq_id={{ $rfq->id }}">{{ $rfq->title }}</a></td>
-                <td>{{ $rfq->freelancer->firstname }} {{ $rfq->freelancer->lastname }}</td>
+                <td>{{ @$rfq->freelancer->firstname }} {{ @$rfq->freelancer->lastname }}</td>
                 <td>{{ $rfq->category->sub_category }}</td>
                 <td>SDG {{ number_format($rfq->budget, 0) }}</td>
                 <td>
