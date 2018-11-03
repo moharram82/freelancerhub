@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title') Project Title @endsection
+@section('title') Project Details @endsection
 
 @section('styles')
 
@@ -16,7 +16,7 @@
 
                 <p class="category">{{ $rfq->category->sub_category }}</p>
 
-                <p class="budget">Budget <span>SDG{{ $rfq->budget }}</span></p>
+                <p class="budget">Budget <span>SDG {{ number_format($rfq->budget, 0) }}</span></p>
 
                 <div class="desc">
 

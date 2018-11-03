@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title') Browse the Hub @endsection
+@section('title') Freelancers Hub @endsection
 
 @section('styles')
 
@@ -19,7 +19,7 @@
                 <div class="sidebar-section">
                     <h4>Category</h4>
                     <ul class="section-nav">
-                        @foreach(\App\Models\Category::all() as $category)
+                        @foreach(\App\Models\Category::all()->sortBy('sub_category') as $category)
                         <li><a href="{{ BASEURL }}/hub.php?filter_by=category&value={{ $category->id }}">{{ $category->sub_category }}</a></li>
                         @endforeach
                     </ul>
@@ -27,7 +27,7 @@
                 <div class="sidebar-section">
                     <h4>Location</h4>
                     <ul class="section-nav">
-                        @foreach(\App\Models\City::all() as $city)
+                        @foreach(\App\Models\City::all()->sortBy('city') as $city)
                             <li><a href="{{ BASEURL }}/hub.php?filter_by=location&value={{ $city->id }}">{{ $city->city }}</a></li>
                         @endforeach
                     </ul>
@@ -35,7 +35,7 @@
                 <div class="sidebar-section">
                     <h4>Skill</h4>
                     <ul class="section-nav">
-                        @foreach(\App\Models\Skill::all() as $skill)
+                        @foreach(\App\Models\Skill::all()->sortBy('skill_name') as $skill)
                             <li><a href="{{ BASEURL }}/hub.php?filter_by=skill&value={{ $skill->id }}">{{ $skill->skill_name }}</a></li>
                         @endforeach
                     </ul>
@@ -45,7 +45,7 @@
 
         <div class="col-12 col-md-10 results">
 
-            <h3 class="mb-4">{{ $results_title }}</h3>
+            <h3 style="color: #959ea9; font-size: 24px; font-weight: 400;" class="mb-4">{{ $results_title }}</h3>
 
             <div class="row freelancers">
 

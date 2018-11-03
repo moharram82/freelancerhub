@@ -2,7 +2,6 @@
 
 require_once '../../init.php';
 
-use App\Models\Proposal;
 use App\Models\User;
 use App\Models\Freelancer;
 use App\Models\Customer;

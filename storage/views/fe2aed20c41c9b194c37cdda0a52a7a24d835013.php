@@ -1,4 +1,4 @@
-<?php $__env->startSection('title'); ?> Browse the Hub <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?> Freelancers Hub <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 
@@ -17,7 +17,7 @@
                 <div class="sidebar-section">
                     <h4>Category</h4>
                     <ul class="section-nav">
-                        <?php $__currentLoopData = \App\Models\Category::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = \App\Models\Category::all()->sortBy('sub_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <li><a href="<?php echo e(BASEURL); ?>/hub.php?filter_by=category&value=<?php echo e($category->id); ?>"><?php echo e($category->sub_category); ?></a></li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
@@ -25,7 +25,7 @@
                 <div class="sidebar-section">
                     <h4>Location</h4>
                     <ul class="section-nav">
-                        <?php $__currentLoopData = \App\Models\City::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $city): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = \App\Models\City::all()->sortBy('city'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $city): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li><a href="<?php echo e(BASEURL); ?>/hub.php?filter_by=location&value=<?php echo e($city->id); ?>"><?php echo e($city->city); ?></a></li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
@@ -33,7 +33,7 @@
                 <div class="sidebar-section">
                     <h4>Skill</h4>
                     <ul class="section-nav">
-                        <?php $__currentLoopData = \App\Models\Skill::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = \App\Models\Skill::all()->sortBy('skill_name'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li><a href="<?php echo e(BASEURL); ?>/hub.php?filter_by=skill&value=<?php echo e($skill->id); ?>"><?php echo e($skill->skill_name); ?></a></li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
@@ -43,7 +43,7 @@
 
         <div class="col-12 col-md-10 results">
 
-            <h3 class="mb-4"><?php echo e($results_title); ?></h3>
+            <h3 style="color: #959ea9; font-size: 24px; font-weight: 400;" class="mb-4"><?php echo e($results_title); ?></h3>
 
             <div class="row freelancers">
 

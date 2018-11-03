@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title') Package Title @endsection
+@section('title') Package Details @endsection
 
 @section('styles')
 

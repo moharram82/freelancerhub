@@ -3,7 +3,6 @@
 require_once '../../init.php';
 
 use App\Models\Customer;
-use App\Models\Proposal;
 use App\Models\User;
 
 if(!$auth->allowOnly('ROLE_CUSTOMER')) {

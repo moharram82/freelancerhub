@@ -1,5 +1,7 @@
 @extends('freelancer.partials.layout')
 
+@section('title') Contracts @endsection
+
 @section('freelancer-contents')
 <div class="box">
     <h2>All Contracts</h2>
@@ -22,10 +24,10 @@
         @foreach($contracts as $contract)
 
             <tr>
-                <td><a href="{{ BASEURL }}/freelancers/contract.php?contract_id={{ $contract->id }}"><strong>{{ $contract->proposal->title }}</strong></a></td>
+                <td><a href="{{ BASEURL }}/freelancers/contract.php?contract_id={{ $contract->id }}">{{ $contract->proposal->title }}</a></td>
                 <td>{{ $contract->proposal->customer->name }}</td>
                 <td>{{ $contract->proposal->start_date }}</td>
-                <td>{{ $contract->proposal->price }}</td>
+                <td>{{ number_format($contract->proposal->price, 0) }}</td>
                 <td>
                     @if($contract->is_completed)
                         Completed

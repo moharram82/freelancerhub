@@ -46,6 +46,10 @@ a:hover {
 .ck-editor__editable {
     min-height: 400px;
 }
+table.table thead th,
+table.table tbody td {
+    vertical-align: middle;
+}
 table.meta-data {
     font-size: 12px;
     margin-bottom: 40px;
@@ -374,7 +378,7 @@ div.package table {
     padding: 0;
 }
 div.package td.bold {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     padding-left: 20px;
 }
@@ -566,8 +570,8 @@ div.options {
     margin: 80px 0 0 0;
 }
 div.options div.sidebar h3 {
-    color: #9bafb9;
-    font-size: 14px;
+    color: #959ea9;
+    font-size: 16px;
     font-weight: 400;
     font-variant: small-caps;
     margin: 0 0 40px 0;
@@ -651,8 +655,106 @@ div.freelancer-card p.location {
 }
 
 /*==================================
-** Freelancer Profile Backend styles
+** Messages styles
 *==================================*/
+div.contacts {
+    background-color: #ffffff;
+    border: 1px solid #e9edf0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+div.contact {
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9edf0;
+    cursor: pointer;
+}
+div.contact:last-child {
+    border-bottom: none;
+}
+div.contact.selected h4,
+div.contact:hover h4 {
+    color: #1ab2ff;
+}
+div.contact img {
+    width: 40px;
+    height: 40px;
+    margin: 0 15px 0 0;
+    padding: 0;
+    float: left;
+}
+div.contact h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+}
+div.messages {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e9edf0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+div.messages-box {
+    max-height: 500px;
+    overflow: scroll;
+}
+div.message {
+    margin-bottom: 20px;
+}
+div.message img {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #959ea9;
+}
+div.message div.message-body {
+    font-size: 14px;
+    line-height: 22px;
+    width: 350px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+div.message p.timing{
+    font-size: 12px;
+    clear: both;
+}
+div.message.sender img {
+    margin-left: 10px;
+    float: right;
+}
+div.message.sender div.message-body {
+    color: #ffffff;
+    background-color: #1a7cc8;
+    margin-left: 10px;
+    float: right;
+}
+div.message.sender p.timing {
+    text-align: right;
+    margin-right: 50px;
+}
+div.message.receiver img {
+    margin-right: 10px;
+    float: left;
+}
+div.message.receiver div.message-body {
+    background-color: #e9edf0;
+    float: left;
+}
+div.message.receiver p.timing {
+    text-align: left;
+    margin-left: 50px;
+}
+div.send-box {
+    margin-top: 10px;
+}
+div.send-box input[type='text'] {
+    display: block;
+    width: 100%;
+    margin: 0 0 5px 0;
+    padding: 5px 10px;
+}
 
 /*==================================
 ** Footer styles

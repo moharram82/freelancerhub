@@ -45,11 +45,14 @@
             </label>
         </div>
 
-        <p></p>
-
         {!! csrf_field() !!}
 
+        <br>
+
         <button type="submit" name="register" value="register" class="btn btn-success btn-lg btn-block">Create Account</button>
+
+        <br>
+        <a href="{{ config('auth.login_path') }}">Already have an account?</a>
     </form>
 @endsection
 

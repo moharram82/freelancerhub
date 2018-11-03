@@ -17,6 +17,11 @@ class RFQ extends Model
         return $this->belongsTo('App\Models\Customer');
     }
 
+    public function freelancer()
+    {
+        return $this->belongsTo('App\Models\Freelancer');
+    }
+
     public function category()
     {
         return $this->belongsTo('App\Models\Category');

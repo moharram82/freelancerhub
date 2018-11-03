@@ -1,4 +1,4 @@
-<?php $__env->startSection('title'); ?> Project Title <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?> Project Details <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 
@@ -14,7 +14,7 @@
 
                 <p class="category"><?php echo e($rfq->category->sub_category); ?></p>
 
-                <p class="budget">Budget <span>SDG<?php echo e($rfq->budget); ?></span></p>
+                <p class="budget">Budget <span>SDG <?php echo e(number_format($rfq->budget, 0)); ?></span></p>
 
                 <div class="desc">
 

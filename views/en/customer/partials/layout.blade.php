@@ -18,8 +18,9 @@
                     <h4>Main</h4>
                     <ul class="section-nav">
                         <li><a href="{{ BASEURL }}/customers/index.php"><i class="fas fa-tachometer-alt"></i>&nbsp; Dashboard</a></li>
-                        <li><a href="{{ BASEURL }}/customers/contracts.php"><i class="fas fa-project-diagram"></i> Contracts</a></li>
+                        <li><a href="{{ BASEURL }}/customers/rfqs.php"><i class="fas fa-question"></i>&nbsp;&nbsp;&nbsp; RFQs</a></li>
                         <li><a href="{{ BASEURL }}/customers/proposals.php"><i class="fas fa-file-invoice-dollar"></i>&nbsp;&nbsp;&nbsp; Proposals</a></li>
+                        <li><a href="{{ BASEURL }}/customers/contracts.php"><i class="fas fa-project-diagram"></i> Contracts</a></li>
                     </ul>
                 </div>
                 <div class="sidebar-section">
@@ -27,7 +28,7 @@
                     <ul class="section-nav">
                         <li><a href="{{ BASEURL }}/customers/profile.php"><i class="fas fa-address-card"></i> Profile</a></li>
                         <li><a href="{{ BASEURL }}/customers/balance.php"><i class="far fa-credit-card"></i> Balance</a></li>
-                        <li><a href="{{ BASEURL }}/messages.php"><i class="fas fa-envelope"></i> Messages</a></li>
+                        <li><a href="{{ BASEURL }}/customers/messages.php"><i class="fas fa-comments"></i> Messages</a></li>
                         <li><a href="{{ config('auth.logout_path') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </div>

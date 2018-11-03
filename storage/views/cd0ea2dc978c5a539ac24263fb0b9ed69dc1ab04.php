@@ -1,3 +1,5 @@
+<?php $__env->startSection('title'); ?> Contracts <?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('freelancer-contents'); ?>
 <div class="box">
     <h2>All Contracts</h2>
@@ -20,10 +22,10 @@
         <?php $__currentLoopData = $contracts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $contract): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
             <tr>
-                <td><a href="<?php echo e(BASEURL); ?>/freelancers/contract.php?contract_id=<?php echo e($contract->id); ?>"><strong><?php echo e($contract->proposal->title); ?></strong></a></td>
+                <td><a href="<?php echo e(BASEURL); ?>/freelancers/contract.php?contract_id=<?php echo e($contract->id); ?>"><?php echo e($contract->proposal->title); ?></a></td>
                 <td><?php echo e($contract->proposal->customer->name); ?></td>
                 <td><?php echo e($contract->proposal->start_date); ?></td>
-                <td><?php echo e($contract->proposal->price); ?></td>
+                <td><?php echo e(number_format($contract->proposal->price, 0)); ?></td>
                 <td>
                     <?php if($contract->is_completed): ?>
                         Completed

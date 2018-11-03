@@ -1,5 +1,7 @@
 @extends('customer.partials.layout')
 
+@section('title') Contract Details @endsection
+
 @section('customer-contents')
 <div class="box">
 
@@ -8,7 +10,7 @@
     <table class="meta-data">
         <tr>
             <td>Developer</td>
-            <td class="data"><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id={{ $contract->proposal->freelancer_id }}">{{ $contract->proposal->freelancer->firstname }} {{ $contract->proposal->freelancer->lastname }}</a></td>
+            <td class="data"><a href="{{ BASEURL }}/freelancer.php?freelancer_id={{ $contract->proposal->freelancer_id }}">{{ $contract->proposal->freelancer->firstname }} {{ $contract->proposal->freelancer->lastname }}</a></td>
         </tr>
         <tr>
             <td>Start</td>
@@ -16,7 +18,7 @@
         </tr>
         <tr>
             <td>Cost</td>
-            <td class="data">SDG{{ $contract->proposal->price }}</td>
+            <td class="data">SDG {{ number_format($contract->proposal->price, 0) }}</td>
         </tr>
         <tr>
             <td>Proposal</td>
@@ -28,9 +30,23 @@
         </tr>
     </table>
 
-    <h5>Details</h5>
+    <hr>
 
     {!! $contract->proposal->details !!}
+
+    @if(! $contract->is_completed)
+
+        <hr>
+
+        <a href="{{ BASEURL }}/checkout.php?contract_id={{ $contract->id }}" class="btn btn-success btn-lg btn-block">Finalize Contract</a>
+
+    @else
+
+        <hr>
+
+        <p style="color: limegreen;" class="text-center">This contract has been finalized.</p>
+
+    @endif
 
     {{--<h5>Stages</h5>--}}
     {{--<br>--}}

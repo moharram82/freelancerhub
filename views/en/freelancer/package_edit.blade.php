@@ -1,5 +1,7 @@
 @extends('freelancer.partials.layout')
 
+@section('title') Edit Package @endsection
+
 @section('freelancer-contents')
     <div class="box">
 

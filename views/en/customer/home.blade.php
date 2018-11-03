@@ -1,5 +1,7 @@
 @extends('customer.partials.layout')
 
+@section('title') Dashboard @endsection
+
 @section('customer-contents')
 
     <div class="box">

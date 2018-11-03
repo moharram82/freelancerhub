@@ -1,4 +1,4 @@
-<?php $__env->startSection('title'); ?> Home <?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?> FreelancerHub - Home <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 

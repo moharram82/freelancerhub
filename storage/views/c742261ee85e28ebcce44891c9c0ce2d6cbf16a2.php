@@ -1,3 +1,5 @@
+<?php $__env->startSection('title'); ?> Contract Details <?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('freelancer-contents'); ?>
 <div class="box">
 
@@ -14,7 +16,7 @@
         </tr>
         <tr>
             <td>Cost</td>
-            <td class="data">SDG<?php echo e($contract->proposal->price); ?></td>
+            <td class="data">SDG <?php echo e(number_format($contract->proposal->price, 0)); ?></td>
         </tr>
         <tr>
             <td>Proposal</td>
@@ -26,7 +28,7 @@
         </tr>
     </table>
 
-    <h5>Details</h5>
+    <hr>
 
     <?php echo $contract->proposal->details; ?>
 

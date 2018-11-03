@@ -1,13 +1,16 @@
 @extends('customer.partials.layout')
 
+@section('title') Proposal Details @endsection
+
 @section('customer-contents')
 <div class="box">
+
     <h2>{{ $proposal->title }}</h2>
 
     <table class="meta-data">
         <tr>
             <td>Developer</td>
-            <td class="data"><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id={{ $proposal->freelancer_id }}">{{ $proposal->freelancer->firstname }} {{ $proposal->freelancer->lastname }}</a></td>
+            <td class="data"><a href="{{ BASEURL }}/freelancer.php?freelancer_id={{ $proposal->freelancer_id }}">{{ $proposal->freelancer->firstname }} {{ $proposal->freelancer->lastname }}</a></td>
         </tr>
         <tr>
             <td>Delivery</td>
@@ -15,7 +18,7 @@
         </tr>
         <tr>
             <td>Cost</td>
-            <td class="data">SDG{{ $proposal->price }}</td>
+            <td class="data">SDG {{ number_format($proposal->price, 0) }}</td>
         </tr>
         <tr>
             <td>Date</td>
@@ -23,12 +26,9 @@
         </tr>
     </table>
 
-    <div>
-        <h3>Details</h3>
+    <hr>
 
-        {!! $proposal->details !!}
-
-    </div>
+    {!! $proposal->details !!}
 
     @if(! $proposal->contract)
 
@@ -40,7 +40,7 @@
 
         {!! csrf_field() !!}
 
-        <button type="submit" name="btnSign" value="register" class="btn btn-success btn-lg btn-block">I accept all terms and would like to sign the contract</button>
+        <button type="submit" name="btnSign" value="sign" class="btn btn-success btn-lg btn-block">I accept all terms and would like to sign the contract</button>
     </form>
 
     @else

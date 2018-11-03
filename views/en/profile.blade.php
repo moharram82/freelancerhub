@@ -23,7 +23,7 @@
                 <h1>{{ $freelancer->firstname }} {{ $freelancer->lastname }}</h1>
                 <p class="subtitle">{{ $freelancer->category->job_title }}</p>
                 <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; {{ $freelancer->city->city }}</p>
-                <a href="{{ BASEURL }}/messages.php" class="btn btn-success btn-lg btn-block">Contact Me now!</a>
+                <a href="{{ BASEURL }}/customers/rfqs.php?action=new&freelancer_id={{ $freelancer->id }}" class="btn btn-success btn-lg btn-block">Hire Me!</a>
             </div>
         </div>
 
@@ -90,7 +90,7 @@
                                 </tr>
                                 <tr>
                                     <td>Starting at</td>
-                                    <td class="bold">SDG{{ $package->price }}</td>
+                                    <td class="bold">SDG {{ number_format($package->price, 0) }}</td>
                                 </tr>
                             </table>
                             <a class="btn btn-outline-secondary btn-block" href="{{ BASEURL }}/package.php?package_id={{ $package->id }}">Details</a>
@@ -143,7 +143,13 @@
 
                     <div class="review">
                         <div class="review-header clearfix">
-                            <img src=''>
+
+                            @if(file_exists(PUBLICPATH . '/img/users/' . $review->customer->user->user_id . '.jpg'))
+                                <img class="picture" src="{{ BASEURL }}/img/users/{{ $review->customer->user->user_id }}.jpg" alt='Profile Picture'>
+                            @else
+                                <img class="picture" src="{{ BASEURL }}/img/users/default.jpg">
+                            @endif
+
                             <h4>{{ $review->customer->name }}</h4>
                             <p>{{ \Carbon\Carbon::make($review->created_at)->diffForHumans() }}</p>
                             <div class="rating">
@@ -160,7 +166,7 @@
 
                     @endforeach
 
-                    <a class="btn btn-outline-secondary btn-lg btn-block" href="{{ BASEURL }}/reviews.php?freelancer_id=2">View all</a>
+                    {{--<a class="btn btn-outline-secondary btn-lg btn-block" href="{{ BASEURL }}/reviews.php?freelancer_id=2">View all</a>--}}
 
                     @else
 

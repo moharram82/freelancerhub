@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title') Home @endsection
+@section('title') FreelancerHub - Home @endsection
 
 @section('styles')
 

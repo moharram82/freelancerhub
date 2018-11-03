@@ -2,10 +2,23 @@
 
 require_once '../init.php';
 
-if(!$auth->allowOnly(['ROLE_FREELANCER', 'ROLE_CUSTOMER'])) {
-    http_response_code(403);
-    header('HTTP/1.1 403 Forbidden', true, 403);
-    exit('You need to <a href="/login.php">login</a> in order to contact a freelancer.');
+if($auth->check()) {
+    switch ($auth->roles()[0]) {
+        case 'ROLE_ADMIN':
+            redirect(BASEURL . '/admin/messages.php');
+            break;
+
+        case 'ROLE_FREELANCER':
+            redirect(BASEURL . '/freelancers/messages.php');
+            break;
+
+        case 'ROLE_CUSTOMER':
+            redirect(BASEURL . '/customers/messages.php');
+            break;
+
+        default:
+            redirect(BASEURL . '/index.php');
+    }
 }
 
-echo $view->make('messages')->render();
+redirect(config('auth.login_path'));

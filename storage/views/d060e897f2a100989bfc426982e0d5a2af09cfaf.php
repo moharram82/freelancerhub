@@ -27,17 +27,16 @@
             <label for="password">Password</label>
             <input type="password" name="password" class="form-control" id="password">
         </div>
-        <div class="form-group form-check">
-            <input class="form-check-input" type="checkbox" name="<?php echo e(config('auth.remember_me.field')); ?>" id="remember_me" value="1">
-            <label class="form-check-label" for="remember_me">
-                Remember me
-            </label>
-        </div>
 
         <?php echo csrf_field(); ?>
 
 
+        <br>
+
         <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+
+        <br>
+        <a href="<?php echo e(config('auth.register_path')); ?>">Don't have an account?</a>
     </form>
 <?php $__env->stopSection(); ?>
 

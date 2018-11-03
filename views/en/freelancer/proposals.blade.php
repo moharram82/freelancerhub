@@ -1,5 +1,7 @@
 @extends('freelancer.partials.layout')
 
+@section('title') Proposals @endsection
+
 @section('freelancer-contents')
 <div class="box">
     <h2>All Issued Proposals</h2>
@@ -26,7 +28,7 @@
                 <td><a href="{{ BASEURL }}/freelancers/proposal.php?proposal_id={{ $proposal->id }}">{{ $proposal->title }}</a></td>
                 <td>{{ $proposal->customer->name }}</td>
                 <td>{{ $proposal->delivery }} days</td>
-                <td>SDG {{ $proposal->price }}</td>
+                <td>SDG {{ number_format($proposal->price, 0) }}</td>
             </tr>
 
         @endforeach

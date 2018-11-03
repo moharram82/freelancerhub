@@ -1,5 +1,7 @@
 @extends('freelancer.partials.layout')
 
+@section('title') Dashboard @endsection
+
 @section('freelancer-contents')
 <div class="box">
     <h2>Dashboard</h2>

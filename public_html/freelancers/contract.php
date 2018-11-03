@@ -11,7 +11,7 @@ if(!$auth->allowOnly('ROLE_FREELANCER')) {
 }
 
 if(! $request->query->get('contract_id') || ! $contract = Contract::exists($request->query->get('contract_id'))) {
-    //redirect('projects.php');
+    redirect('contracts.php');
 }
 
 echo $view->make('freelancer.contract', ['contract' => $contract])->render();

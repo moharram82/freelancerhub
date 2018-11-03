@@ -6,55 +6,75 @@
 
 <?php $__env->startSection('contents'); ?>
 
-    <div class="box">
+    <h1 class="text-center">Projects Hub</h1>
 
-        <h1>Projects Hub</h1>
+    <div class="row">
 
-        <p style="color: #859399;font-size: 20px; font-style: italic;">Here you can find all project requests published by customers, feel free to browse the list and apply to any project you find interesting to you!</p>
+        <div class="col-12 col-md-2 options">
+            <div class="sidebar">
 
-        <div class="row">
+                <h3>Filter By</h3>
 
-            <?php if($rfqs->count()): ?>
+                <div class="sidebar-section">
+                    <h4>Category</h4>
+                    <ul class="section-nav">
+                        <?php $__currentLoopData = \App\Models\Category::all()->sortBy('sub_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><a href="<?php echo e(BASEURL); ?>/projects.php?filter_by=category&value=<?php echo e($category->id); ?>"><?php echo e($category->sub_category); ?></a></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-            <div class="col-12">
-                <table class="table table-hover">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>Title</th>
-                            <th>Customer</th>
-                            <th>Category</th>
-                            <th>Budget</th>
-                            <th>Published</th>
-                        </tr>
-                    </thead>
+        <div class="col-12 col-md-10 results">
 
-                    <tbody>
+            <h3 style="color: #959ea9; font-size: 24px; font-weight: 400;" class="mb-4"><?php echo e($results_title); ?></h3>
 
-                    <?php $__currentLoopData = $rfqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rfq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="box">
 
-                        <tr>
-                            <td><a href="<?php echo e(BASEURL); ?>/rfq.php?rfq_id=1"><?php echo e($rfq->title); ?></a></td>
-                            <td><?php echo e($rfq->customer->name); ?></td>
-                            <td><?php echo e($rfq->category->sub_category); ?></td>
-                            <td>SDG<?php echo e($rfq->budget); ?></td>
-                            <td><?php echo e(\Carbon\Carbon::make($rfq->created_at)->diffForHumans()); ?></td>
-                        </tr>
+                <?php if($rfqs->count()): ?>
 
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <div class="col-12">
+                        <table class="table table-hover">
+                            <thead class="thead-light">
+                            <tr>
+                                <th>Title</th>
+                                <th>Customer</th>
+                                <th>Category</th>
+                                <th>Budget</th>
+                                <th>Published</th>
+                            </tr>
+                            </thead>
 
-                    </tbody>
+                            <tbody>
 
-                </table>
+                            <?php $__currentLoopData = $rfqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rfq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                                <tr>
+                                    <td><a href="<?php echo e(BASEURL); ?>/rfq.php?rfq_id=1"><?php echo e($rfq->title); ?></a></td>
+                                    <td><?php echo e($rfq->customer->name); ?></td>
+                                    <td><?php echo e($rfq->category->sub_category); ?></td>
+                                    <td>SDG <?php echo e(number_format($rfq->budget, 0)); ?></td>
+                                    <td><?php echo e(\Carbon\Carbon::make($rfq->created_at)->diffForHumans()); ?></td>
+                                </tr>
+
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                <?php else: ?>
+
+                    <p>No published projects for now!</p>
+
+                <?php endif; ?>
 
             </div>
-
-            <?php else: ?>
-
-            <p>No published projects for now!</p>
-
-            <?php endif; ?>
-
         </div>
+
     </div>
 
     <?php $__env->stopSection(); ?>

@@ -1,5 +1,7 @@
 @extends('freelancer.partials.layout')
 
+@section('title') Package Details @endsection
+
 @section('freelancer-contents')
 
     <div class="box">
@@ -13,7 +15,7 @@
             </tr>
             <tr>
                 <td>Start Price</td>
-                <td class="data">SDG{{ $package->price }}</td>
+                <td class="data">SDG {{ number_format($package->price, 0) }}</td>
             </tr>
             <tr>
                 <td>Added on</td>

@@ -1,5 +1,7 @@
 @extends('customer.partials.layout')
 
+@section('title') Proposals @endsection
+
 @section('customer-contents')
 <div class="box">
     <h2>All Received Proposals</h2>
@@ -22,10 +24,10 @@
             @foreach($proposals as $proposal)
 
                 <tr>
-                    <td><a href="{{ BASEURL }}/customers/proposal.php?proposal_id={{ $proposal->id }}"><strong>{{ $proposal->title }}</strong></a></td>
-                    <td><a href="{{ BASEURL }}/freelancers/freelancer.php?freelancer_id={{ $proposal->freelancer_id }}">{{ $proposal->freelancer->firstname }} {{ $proposal->freelancer->lastname }}</a></td>
+                    <td><a href="{{ BASEURL }}/customers/proposal.php?proposal_id={{ $proposal->id }}">{{ $proposal->title }}</a></td>
+                    <td><a href="{{ BASEURL }}/freelancer.php?freelancer_id={{ $proposal->freelancer_id }}">{{ $proposal->freelancer->firstname }} {{ $proposal->freelancer->lastname }}</a></td>
                     <td>{{ $proposal->id }} days</td>
-                    <td>SDG{{ $proposal->price }}</td>
+                    <td>SDG {{ number_format($proposal->price, 0) }}</td>
                     <td>{{ \Carbon\Carbon::make($proposal->created_at)->diffForHumans() }}</td>
                 </tr>
 

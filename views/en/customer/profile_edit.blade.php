@@ -1,5 +1,7 @@
 @extends('customer.partials.layout')
 
+@section('title') Edit My Profile @endsection
+
 @section('customer-contents')
 
     <div class="box">

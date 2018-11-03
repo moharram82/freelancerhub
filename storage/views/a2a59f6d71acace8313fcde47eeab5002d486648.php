@@ -21,7 +21,7 @@
                 <h1><?php echo e($freelancer->firstname); ?> <?php echo e($freelancer->lastname); ?></h1>
                 <p class="subtitle"><?php echo e($freelancer->category->job_title); ?></p>
                 <p class="location"><i class="fas fa-map-marker-alt"></i> &nbsp; <?php echo e($freelancer->city->city); ?></p>
-                <a href="<?php echo e(BASEURL); ?>/messages.php" class="btn btn-success btn-lg btn-block">Contact Me now!</a>
+                <a href="<?php echo e(BASEURL); ?>/customers/rfqs.php?action=new&freelancer_id=<?php echo e($freelancer->id); ?>" class="btn btn-success btn-lg btn-block">Hire Me!</a>
             </div>
         </div>
 
@@ -89,7 +89,7 @@
                                 </tr>
                                 <tr>
                                     <td>Starting at</td>
-                                    <td class="bold">SDG<?php echo e($package->price); ?></td>
+                                    <td class="bold">SDG <?php echo e(number_format($package->price, 0)); ?></td>
                                 </tr>
                             </table>
                             <a class="btn btn-outline-secondary btn-block" href="<?php echo e(BASEURL); ?>/package.php?package_id=<?php echo e($package->id); ?>">Details</a>
@@ -142,7 +142,13 @@
 
                     <div class="review">
                         <div class="review-header clearfix">
-                            <img src=''>
+
+                            <?php if(file_exists(PUBLICPATH . '/img/users/' . $review->customer->user->user_id . '.jpg')): ?>
+                                <img class="picture" src="<?php echo e(BASEURL); ?>/img/users/<?php echo e($review->customer->user->user_id); ?>.jpg" alt='Profile Picture'>
+                            <?php else: ?>
+                                <img class="picture" src="<?php echo e(BASEURL); ?>/img/users/default.jpg">
+                            <?php endif; ?>
+
                             <h4><?php echo e($review->customer->name); ?></h4>
                             <p><?php echo e(\Carbon\Carbon::make($review->created_at)->diffForHumans()); ?></p>
                             <div class="rating">
@@ -160,7 +166,7 @@
 
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                    <a class="btn btn-outline-secondary btn-lg btn-block" href="<?php echo e(BASEURL); ?>/reviews.php?freelancer_id=2">View all</a>
+                    
 
                     <?php else: ?>
 

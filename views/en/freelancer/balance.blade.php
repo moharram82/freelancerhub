@@ -1,5 +1,7 @@
 @extends('freelancer.partials.layout')
 
+@section('title') My Balance @endsection
+
 @section('freelancer-contents')
 
     <div class="box">
@@ -10,9 +12,9 @@
 
         <p>Your balance is: <strong>SDG
                 @if($freelancer->balance < 1000)
-                <span style="color: #ff0000;">{{ $freelancer->balance }}</span>
+                <span style="color: #ff0000;">{{ number_format($freelancer->balance, 0) }}</span>
                 @else
-                <span style="color: limegreen;">{{ $freelancer->balance }}</span>
+                <span style="color: limegreen;">{{ number_format($freelancer->balance, 0) }}</span>
                 @endif
         </strong></p>
 

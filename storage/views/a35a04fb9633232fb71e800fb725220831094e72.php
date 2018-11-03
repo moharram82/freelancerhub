@@ -1,3 +1,5 @@
+<?php $__env->startSection('title'); ?> Packages <?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('freelancer-contents'); ?>
     <div class="box">
 
@@ -26,10 +28,11 @@
                     <tr>
                         <td><a href="<?php echo e(BASEURL); ?>/freelancers/package.php?package_id=<?php echo e($package->id); ?>"><strong><?php echo e($package->title); ?></strong></a></td>
                         <td><?php echo e($package->delivery); ?> days</td>
-                        <td>SDG<?php echo e($package->price); ?></td>
+                        <td>SDG <?php echo e(number_format($package->price, 0)); ?></td>
                         <td>
                             <a href="<?php echo e(BASEURL); ?>/freelancers/packages.php?action=edit&package_id=<?php echo e($package->id); ?>" style="color: #5c6b78;" title="Edit Package"><i class="far fa-edit"></i></a> |
-                            <a href="<?php echo e(BASEURL); ?>/freelancers/packages.php?action=delete&package_id=<?php echo e($package->id); ?>" style="color: #ff0000;" title="Delete Package" onclick="return confirm('Are you sure you want to delete the package: <?php echo e($package->title); ?>');"><i class="far fa-trash-alt"></i></a></td>
+                            <a href="<?php echo e(BASEURL); ?>/freelancers/packages.php?action=delete&package_id=<?php echo e($package->id); ?>" style="color: #ff0000;" title="Delete Package" onclick="return confirm('Are you sure you want to delete the package: <?php echo e($package->title); ?>');"><i class="far fa-trash-alt"></i></a>
+                        </td>
                     </tr>
 
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
