@@ -1,13 +1,15 @@
-@extends('layouts.main')
+@extends('admin.partials.layout')
 
-@section('title') Admin Profile @endsection
+@section('title') Dashboard @endsection
 
-@section('styles')
+@section('admin-contents')
+    <div class="box">
 
-@endsection
+        <h2>Dashboard</h2>
 
-@section('contents')
-    <h1>Admin Profile</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut blanditiis qui quod quos tenetur? Adipisci aliquam fuga id quibusdam unde. Ab accusantium alias culpa provident quia quod sed, voluptatem?</p>
+
+    </div>
 @endsection
 
 @section('scripts')

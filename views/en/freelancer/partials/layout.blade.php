@@ -29,7 +29,6 @@
                     <ul class="section-nav">
                         <li><a href="{{ BASEURL }}/freelancers/profile.php"><i class="fas fa-address-card"></i> Profile</a></li>
                         <li><a href="{{ BASEURL }}/freelancers/balance.php"><i class="far fa-credit-card"></i> Balance</a></li>
-                        <li><a href="{{ BASEURL }}/freelancers/messages.php"><i class="fas fa-comments"></i> Messages</a></li>
                         <li><a href="{{ config('auth.logout_path') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </div>
