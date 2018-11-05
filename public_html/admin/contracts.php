@@ -10,6 +10,13 @@ if(!$auth->allowOnly('ROLE_ADMIN')) {
     exit('You do not have permissions to visit this page.');
 }
 
-$contracts = Contract::all();
+if($request->query->has('action') && $request->query->get('action') == 'delete' && $request->query->has('contract_id') && $contract = \App\Models\Contract::exists($request->query->get('contract_id'))) {
+    $contract->destroy($contract->id);
+
+    redirect(SELF);
+}
+
+
+$contracts = Contract::has('proposal')->get();
 
 echo $view->make('admin.contracts', ['contracts' => $contracts])->render();

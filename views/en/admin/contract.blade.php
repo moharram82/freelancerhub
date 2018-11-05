@@ -13,6 +13,10 @@
             <td class="data">{{ $contract->proposal->customer->name }}</td>
         </tr>
         <tr>
+            <td>Developer</td>
+            <td class="data">{{ $contract->proposal->freelancer->firstname }} {{ $contract->proposal->freelancer->lastname }}</td>
+        </tr>
+        <tr>
             <td>Start</td>
             <td class="data">{{ $contract->proposal->start_date }}</td>
         </tr>
@@ -22,7 +26,17 @@
         </tr>
         <tr>
             <td>Proposal</td>
-            <td class="data"><a href="{{ BASEURL }}/freelancers/proposal.php?proposal_id={{ $contract->proposal->id }}">{{ $contract->proposal->title }}</a></td>
+            <td class="data"><a href="{{ BASEURL }}/admin/proposal.php?proposal_id={{ $contract->proposal->id }}">{{ $contract->proposal->title }}</a></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td class="data">
+                @if($contract->is_completed)
+                    Completed
+                @else
+                    Not-completed
+                @endif
+            </td>
         </tr>
         <tr>
             <td>Signed on</td>

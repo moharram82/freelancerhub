@@ -20,7 +20,7 @@
                         <li><a href="<?php echo e(BASEURL); ?>/admin/customers.php"><i class="fas fa-user-tie"></i>&nbsp;&nbsp;&nbsp; Customers</a></li>
                         <li><a href="<?php echo e(BASEURL); ?>/admin/rfqs.php"><i class="fas fa-question"></i>&nbsp;&nbsp;&nbsp; RFQs</a></li>
                         <li><a href="<?php echo e(BASEURL); ?>/admin/proposals.php"><i class="fas fa-file-invoice-dollar"></i>&nbsp;&nbsp;&nbsp; Proposals</a></li>
-                        <!-- <li><a href="<?php echo e(BASEURL); ?>/admin/contracts.php"><i class="fas fa-project-diagram"></i>&nbsp; Contracts</a></li> -->
+                        <li><a href="<?php echo e(BASEURL); ?>/admin/contracts.php"><i class="fas fa-project-diagram"></i>&nbsp; Contracts</a></li>
                     </ul>
                 </div>
                 <div class="sidebar-section">

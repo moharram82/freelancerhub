@@ -13,9 +13,10 @@
             <tr>
                 <th>Title</th>
                 <th>Customer</th>
-                <th>Start Date</th>
+                <th>Developer</th>
                 <th>Cost</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
 
@@ -27,14 +28,16 @@
                 <td><a href="{{ BASEURL }}/admin/contract.php?contract_id={{ $contract->id }}">{{ $contract->proposal->title }}</a></td>
                 <td>{{ $contract->proposal->customer->name }}</td>
                 <td>{{ $contract->proposal->freelancer->firstname }} {{ $contract->proposal->freelancer->lastname }}</td>
-                <td>{{ $contract->proposal->start_date }}</td>
                 <td>{{ number_format($contract->proposal->price, 0) }}</td>
                 <td>
                     @if($contract->is_completed)
                         Completed
                     @else
-                        Not completed
+                        Not-completed
                     @endif
+                </td>
+                <td>
+                    <a href="{{ BASEURL }}/admin/contracts.php?action=delete&contract_id={{ $contract->id }}" style="color: #ff0000;" title="Delete Contract" onclick="return confirm('Are you sure you want to delete contract: {{ $contract->proposal->title }}');"><i class="far fa-trash-alt"></i></a>
                 </td>
             </tr>
 

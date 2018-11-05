@@ -11,9 +11,10 @@
             <tr>
                 <th>Title</th>
                 <th>Customer</th>
-                <th>Start Date</th>
+                <th>Developer</th>
                 <th>Cost</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
 
@@ -25,14 +26,16 @@
                 <td><a href="<?php echo e(BASEURL); ?>/admin/contract.php?contract_id=<?php echo e($contract->id); ?>"><?php echo e($contract->proposal->title); ?></a></td>
                 <td><?php echo e($contract->proposal->customer->name); ?></td>
                 <td><?php echo e($contract->proposal->freelancer->firstname); ?> <?php echo e($contract->proposal->freelancer->lastname); ?></td>
-                <td><?php echo e($contract->proposal->start_date); ?></td>
                 <td><?php echo e(number_format($contract->proposal->price, 0)); ?></td>
                 <td>
                     <?php if($contract->is_completed): ?>
                         Completed
                     <?php else: ?>
-                        Not completed
+                        Not-completed
                     <?php endif; ?>
+                </td>
+                <td>
+                    <a href="<?php echo e(BASEURL); ?>/admin/contracts.php?action=delete&contract_id=<?php echo e($contract->id); ?>" style="color: #ff0000;" title="Delete Contract" onclick="return confirm('Are you sure you want to delete contract: <?php echo e($contract->proposal->title); ?>');"><i class="far fa-trash-alt"></i></a>
                 </td>
             </tr>
 
