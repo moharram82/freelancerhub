@@ -206,6 +206,9 @@ define('SELF', rtrim(str_replace("\\", "/", $protocol . $_SERVER['HTTP_HOST'] . 
 // Load views configuration file
 require_once(BASEPATH . '/config/view.php');
 
+// Load pagination configuration file
+require_once(BASEPATH . '/config/pagination.php');
+
 /*
  * ------------------------------------------------------
  * APPLICATION CHARSET

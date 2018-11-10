@@ -19,6 +19,7 @@
     "symfony/http-foundation": "~3.4.0",
     "symfony/security": "~3.4.0",
     "illuminate/database": "~5.5.0",
+    "illuminate/pagination": "~5.5.0",
     "illuminate/view": "~5.5.0",
     "illuminate/encryption": "~5.5.0",
     "illuminate/hashing": "~5.5.0",
